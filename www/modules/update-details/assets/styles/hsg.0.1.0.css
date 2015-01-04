@@ -1,0 +1,6642 @@
+/*
+ * HSG - Harel Style Guide
+ * Version 0.1.0
+ * Created on 11-11-2014 by kisin
+ */
+
+/*
+* For modern browsers
+* 1. The space content is one way to avoid an Opera bug when the
+*    contenteditable attribute is included anywhere else in the document.
+*    Otherwise it causes space to appear at the top and bottom of elements
+*    that are clearfixed.
+* 2. The use of 'table' rather than 'block' is only necessary if using
+*    ':before' to contain the top-margins of child elements.
+*
+*/
+/* Component: Visibility
+ ========================================================================== */
+/* ========================================================================
+   Grid Mixins
+ ========================================================================== */
+/* Component: row
+ ========================================================================== */
+/*
+ * Make row
+ *
+ * 1. Needed for the gutter
+ * 2. Makes grid more robust so that it can be used with other block elements like lists
+ */
+/*
+ * Make row gutter modifier
+ *
+ * 1. '.hsg-panel' must be exact name. watch 'panel.less' for more details
+ */
+/*
+ * row divider
+ */
+/* Component: columns
+ ========================================================================== */
+/* Component:
+ ========================================================================== */
+/* ========================================================================
+   Framework Grid Mixins
+ ========================================================================== */
+/*
+ * make divider style
+ */
+/*
+ * make row all columns even
+ */
+/*
+ * make row all columns
+ */
+/*
+ * base declarations for columns
+ *
+ * 1. Prevent columns from collapsing when empty
+ */
+/*
+ * 1. Required for 'a' elements
+ * 2. Required for 'button' and 'input' elements
+ * 3. 'line-height' is used to create a height
+ * 4. 'min-height' is necessary for 'input' elements in Firefox and Opera because 'line-height' is not working.
+ * 5. Reset button group whitespace hack
+ * 6. Style
+ */
+/*
+ * 1. Micro clearfix to make list more robust
+ * 2. Remove margin from the last-child
+ * 3. Nested lists
+ */
+/* Modifier: list types
+ ========================================================================== */
+/*
+  * 1. Default label is stacked above input
+  * 2. Label of checkbox and radio always need to be inline with input
+  * 3. Remove margin from the last-child
+  * 4. Removing the IE10+ select element arrow style
+  * 5. Special element that display text with input dimensions
+  * 6. Removes box-shadow for invalid controls in Firefox
+  * 7. Higher specificity (!important) needed to override color in IE
+ */
+/*
+ * Validation states
+ */
+/* ========================================================================
+   Framework Form Mixins
+ ========================================================================== */
+/*
+ * Controls
+ * Except for 'range', 'radio', 'checkbox', 'file', 'submit', 'reset', 'button' and 'image'
+ * 1. Must be 'height' because 'min-height' is not working in OSX
+ * 2. Responsiveness: Sets a maximum width relative to the parent to scale on narrower viewports
+ * 3. Vertical 'padding' needed for 'select' elements in Firefox
+ * 4. Default width of input is maximized to his container
+ * 5. Make sure input (select) will not show text as two lines inside
+ * 6. Prevents inputs go outside their grid limitations
+ * 7. Style
+ */
+/* Using !important to keep the selector simple */
+/* Using !important to keep the selector simple */
+/*
+ * 1. Block element behavior
+ * 2. Add margin if adjacent element
+ * 3. Set alignment
+ * 4. Caption and footer
+ */
+/* Modifier: table types
+ ========================================================================== */
+/*
+ * 1. Needed for 'a' elements
+ * 2. Create position context for badges
+ * 3. Remove margin from the last-child if not 'hsg-widget-title'
+ */
+/* Sub-object: panel title
+ ========================================================================== */
+/* Sub-object: panel badge
+ ========================================================================== */
+/* Modifier: padding
+ ========================================================================== */
+/*
+ * 1. Disable and hide app full screen background image
+ */
+/* Fonts
+========================================================================== */
+@font-face {
+  font-family: 'mfw_protocolharel';
+  src: url("../fonts/MFW_ProtocolHarel-Medium.eot");
+  src: url("../fonts/MFW_ProtocolHarel-Medium.eot?#iefix") format('embedded-opentype'), url("../fonts/MFW_ProtocolHarel-Medium.woff") format('woff'), url("../fonts/MFW_ProtocolHarel-Medium.ttf") format('truetype'), url("../fonts/MFW_ProtocolHarel-Medium.svg#mfw_protocolharelmedium") format('svg');
+}
+@font-face {
+  font-family: 'mfw_protocolharel';
+  src: url("../fonts/MFW_ProtocolHarel-Bold.eot");
+  src: url("../fonts/MFW_ProtocolHarel-Bold.eot?#iefix") format('embedded-opentype'), url("../fonts/MFW_ProtocolHarel-Bold.woff") format('woff'), url("../fonts/MFW_ProtocolHarel-Bold.ttf") format('truetype'), url("../fonts/MFW_ProtocolHarel-Bold.svg#mfw_protocolharelbold") format('svg');
+  font-weight: bold;
+}
+/* ========================================================================
+   Component: Normalize
+ ========================================================================== */
+/*
+   HTML5 display definitions
+ ========================================================================== */
+/**
+ * Correct `block` display not defined in IE 8/9.
+ */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block;
+}
+/**
+ * Correct `inline-block` display not defined in IE 8/9.
+ */
+audio,
+canvas,
+video {
+  display: inline-block;
+}
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+/**
+ * Address `[hidden]` styling not present in IE 8/9.
+ * Hide the `template` element in IE, Safari, and Firefox < 22.
+ */
+[hidden],
+template {
+  display: none;
+}
+/* ==========================================================================
+   Base
+   ========================================================================== */
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling user zoom.
+ * 3. Remove grey background on link clicked in ios safari
+ */
+html {
+  font-family: sans-serif;
+  /* 1 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  /* 3 */
+}
+/**
+ * Remove default margin.
+ */
+body {
+  margin: 0;
+}
+/* ==========================================================================
+   Links
+   ========================================================================== */
+/**
+ * Remove the gray background color from active links in IE 10.
+ */
+a {
+  background: transparent;
+}
+/**
+ * Address `outline` inconsistency between Chrome and other browsers.
+ */
+a:focus {
+  outline: thin dotted;
+}
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+a:active,
+a:hover {
+  outline: 0;
+}
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+/**
+ * Address variable `h1` font-size and margin within `section` and `article`
+ * contexts in Firefox 4+, Safari 5, and Chrome.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+/**
+ * Address styling not present in IE 8/9, Safari 5, and Chrome.
+ */
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+/**
+ * Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
+ */
+b,
+strong {
+  font-weight: bold;
+}
+/**
+ * Address styling not present in Safari 5 and Chrome.
+ */
+dfn {
+  font-style: italic;
+}
+/**
+ * Address differences between Firefox and other browsers.
+ */
+hr {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+/**
+ * Address styling not present in IE 8/9.
+ */
+mark {
+  background: #ff0;
+  color: #000;
+}
+/**
+ * Correct font family set oddly in Safari 5 and Chrome.
+ */
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, serif;
+  font-size: 1em;
+}
+/**
+ * Improve readability of pre-formatted text in all browsers.
+ */
+pre {
+  white-space: pre-wrap;
+}
+/**
+ * Set consistent quote types.
+ */
+q {
+  quotes: "\201C" "\201D" "\2018" "\2019";
+}
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+small {
+  font-size: 80%;
+}
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sup {
+  top: -0.5em;
+}
+sub {
+  bottom: -0.25em;
+}
+/* ==========================================================================
+   Embedded content
+   ========================================================================== */
+/**
+ * Remove border when inside `a` element in IE 8/9.
+ */
+img {
+  border: 0;
+}
+/**
+ * Correct overflow displayed oddly in IE 9.
+ */
+svg:not(:root) {
+  overflow: hidden;
+}
+/* ==========================================================================
+   Figures
+   ========================================================================== */
+/**
+ * Address margin not present in IE 8/9 and Safari 5.
+ */
+figure {
+  margin: 0;
+}
+/* ==========================================================================
+   Forms
+   ========================================================================== */
+/**
+ * Define consistent border, margin, and padding.
+ */
+fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+/**
+ * 1. Correct `color` not being inherited in IE 8/9.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+legend {
+  border: 0;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+/**
+ * 1. Correct font family not being inherited in all browsers.
+ * 2. Correct font size not being inherited in all browsers.
+ * 3. Address margins set differently in Firefox 4+, Safari 5, and Chrome.
+ */
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 2 */
+  margin: 0;
+  /* 3 */
+}
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+button,
+input {
+  line-height: normal;
+}
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Chrome, Safari 5+, and IE 8+.
+ * Correct `select` style inheritance in Firefox 4+ and Opera.
+ */
+button,
+select {
+  text-transform: none;
+}
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */
+}
+/**
+ * Re-set default cursor for disabled elements.
+ */
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+/**
+ * 1. Address box sizing set to `content-box` in IE 8/9/10.
+ * 2. Remove excess padding in IE 8/9/10.
+ */
+input[type="checkbox"],
+input[type="radio"] {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
+ *    (include `-moz` to future-proof).
+ */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  /* 2 */
+}
+/**
+ * Remove inner padding and search cancel button in Safari 5 and Chrome
+ * on OS X.
+ */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+/**
+ * 1. Remove default vertical scrollbar in IE 8/9.
+ * 2. Improve readability and alignment in all browsers.
+ */
+textarea {
+  overflow: auto;
+  /* 1 */
+  vertical-align: top;
+  /* 2 */
+}
+/* ==========================================================================
+   Tables
+   ========================================================================== */
+/**
+ * Remove most spacing between table cells.
+ */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* ========================================================================
+   Component: Base
+ ========================================================================== */
+/* Body
+ ========================================================================== */
+/*
+ * 1. 'font-size' is set in 'html' element to future support the 'rem' unit for font-sizes
+ * 2. border-box FTW (http://www.paulirish.com/2012/box-sizing-border-box-ftw)
+ */
+html {
+  /* 1 */
+  font-size: 15px;
+  /* 2 */
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* 2 */
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+}
+body {
+  background: #69727b;
+  font-family: "mfw_protocolharel", Arial;
+  font-weight: normal;
+  line-height: 1.5;
+  color: #585858;
+}
+/* Only phones */
+@media (max-width: 764px) {
+  /*
+     * Break strings if their length exceeds the width of their container
+     */
+  body {
+    word-wrap: break-word;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
+  }
+}
+/* Text-level semantics
+ ========================================================================== */
+/*
+ * Links
+ */
+a {
+  color: #006cb2;
+  text-decoration: none;
+}
+a:hover {
+  color: #003557;
+  text-decoration: underline;
+}
+/*
+ * Emphasize
+ */
+em {
+  color: #dd0055;
+}
+/*
+ * Insert
+ */
+ins {
+  background: #ffffaa;
+  color: #444444;
+  text-decoration: none;
+}
+/*
+ * Mark
+ * Note: Addresses styling not present in IE 8/9.
+ */
+mark {
+  background: #ffffaa;
+  color: #444444;
+}
+/*
+ * Selection highlight
+ */
+::-moz-selection {
+  background: #3399ff;
+  color: #ffffff;
+  text-shadow: none;
+}
+::selection {
+  background: #3399ff;
+  color: #ffffff;
+  text-shadow: none;
+}
+/*
+ * Abbreviation and definition
+ */
+abbr[title],
+dfn[title] {
+  cursor: help;
+}
+dfn[title] {
+  border-bottom: 1px dotted;
+  font-style: normal;
+}
+/* Embedded content
+ ========================================================================== */
+/*
+ * 1. Corrects max-width behavior (2.) if padding and border are used
+ * 2. Responsiveness: Sets a maxium width relative to the parent and auto scales the height
+ * 3. Remove the gap between images and the bottom of their containers
+ */
+img {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  /* 1 */
+  max-width: 100%;
+  /* 2 */
+  height: auto;
+  /* 2 */
+  vertical-align: middle;
+  /* 3 */
+}
+/*
+ * Preserve original image dimensions
+ * 1. Fix Google maps automatically via URL detection
+ */
+.hsg-img-preserve,
+.hsg-img-preserve img,
+img[src*="maps.gstatic.com"],
+img[src*="googleapis.com"] {
+  max-width: none;
+}
+/* Spacing for block elements
+ ========================================================================== */
+p,
+hr,
+ul,
+ol,
+dl,
+blockquote,
+pre,
+address,
+fieldset,
+figure {
+  margin: 0 0 15px 0;
+}
+/*
+ * Don't worry about the universal selector.
+ * There is no mentionable performance impact.
+ */
+* + p,
+* + hr,
+* + ul,
+* + ol,
+* + dl,
+* + blockquote,
+* + pre,
+* + address,
+* + fieldset,
+* + figure {
+  margin-top: 15px;
+}
+/*
+* Hide bottom spacing from last block element
+*/
+p:last-child,
+hr:last-child,
+ul:last-child,
+ol:last-child,
+dl:last-child {
+  margin-bottom: 0;
+}
+/* Headings
+ ========================================================================== */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 0 15px 0;
+  font-weight: normal;
+  color: #444444;
+}
+/*
+ * Don't worry about the universal selector.
+ * There is no mentionable performance impact.
+ */
+* + h1,
+* + h2,
+* + h3,
+* + h4,
+* + h5,
+* + h6 {
+  margin-top: 20px;
+}
+h1,
+.hsg-h1 {
+  font-size: 36px;
+  line-height: 42px;
+}
+h2,
+.hsg-h2 {
+  font-size: 28px;
+  line-height: 34px;
+}
+h3,
+.hsg-h3 {
+  font-size: 24px;
+  line-height: 30px;
+}
+h4,
+.hsg-h4 {
+  font-size: 20px;
+  line-height: 26px;
+}
+h5,
+.hsg-h5 {
+  font-size: 18px;
+  line-height: 26px;
+}
+h6,
+.hsg-h6 {
+  font-size: 14px;
+  line-height: 20px;
+}
+/* Lists
+ ========================================================================== */
+/*
+ * Ordered and unordered lists
+ */
+ul,
+ol {
+  padding-left: 30px;
+}
+/* Reset margin for nested lists */
+ul > li > ul,
+ul > li > ol,
+ol > li > ol,
+ol > li > ul {
+  margin: 0;
+}
+/*
+ * Description lists
+ */
+dd {
+  margin-right: 0;
+}
+/* Horizontal rule
+ ========================================================================== */
+hr {
+  display: block;
+  padding: 0;
+  border: 0;
+  border-top: 1px solid #dddddd;
+}
+hr.hsg-hr-large {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+/* Address
+ ========================================================================== */
+address {
+  font-style: normal;
+}
+/* Quotes
+ ========================================================================== */
+q,
+blockquote {
+  font-style: italic;
+}
+blockquote {
+  padding-right: 15px;
+  border-right: 5px solid #dddddd;
+  font-size: 16px;
+  line-height: 22px;
+}
+/* Small print for identifying the source */
+blockquote small {
+  display: block;
+  color: #999999;
+  font-style: normal;
+}
+/* Smaller margin if 'small' follows */
+blockquote p:last-of-type {
+  margin-bottom: 5px;
+}
+/* Code and preformatted text
+ ========================================================================== */
+code {
+  color: #dd0055;
+  font-size: 12px;
+  border: 1px solid #e5e5e5;
+  padding: 0 4px;
+  direction: ltr;
+  display: inline-block;
+}
+/* Reset code elements if parent of pre elements */
+pre code {
+  color: inherit;
+  white-space: pre-wrap;
+}
+pre {
+  padding: 10px;
+  background: #f5f5f5;
+  color: #444444;
+  font-size: 12px;
+  line-height: 18px;
+  -moz-tab-size: 4;
+  tab-size: 4;
+}
+/* Forms
+ ========================================================================== */
+th {
+  font-weight: normal;
+}
+/* Forms
+ ========================================================================== */
+/*
+ * Vertical alignment
+ * Exclude 'radio' and 'checkbox' elements because the default 'baseline' value aligns better with text
+ */
+button,
+input:not([type="radio"]):not([type="checkbox"]),
+select {
+  vertical-align: middle;
+}
+/* Iframe
+ ========================================================================== */
+iframe {
+  border: 0;
+}
+/* Fix viewport for IE10 snap mode
+/* Internet Explorer 10 doesn't differentiate device width from viewport width
+ ========================================================================== */
+@media screen and (max-width: 400px) {
+  @-ms-viewport {
+    width: device-width;
+  }
+}
+/* ========================================================================
+   Component: List
+ ========================================================================== */
+.hsg-list {
+  padding: 0;
+  list-style: none;
+  /* 1 */
+  /* 2 */
+}
+.hsg-list > li:before,
+.hsg-list > li:after {
+  /* 1 */
+  content: " ";
+  /* 2 */
+  display: table;
+}
+.hsg-list > li:after {
+  clear: both;
+}
+.hsg-list > li > :last-child {
+  margin-bottom: 0;
+}
+.hsg-list ul {
+  margin: 0;
+  padding-right: 20px;
+  list-style: none;
+}
+/* Modifiers
+ ========================================================================== */
+.hsg-list-inline {
+  padding: 0;
+  list-style: none;
+}
+.hsg-list-inline > li {
+  display: inline-block;
+  padding-left: 10px;
+}
+.hsg-list-inline > li:last-child {
+  padding-left: 0;
+}
+@media (max-width: 518px) {
+  .hsg-list-inline > li {
+    display: block;
+    padding-left: 0;
+  }
+}
+.hsg-list-inline.hsg-list-inline-large li {
+  padding-left: 40px;
+}
+.hsg-list-inline.hsg-list-inline-large li:last-child {
+  padding-left: 0;
+}
+@media (max-width: 518px) {
+  .hsg-list-inline.hsg-list-inline-large li {
+    display: block;
+    padding-left: 0;
+  }
+}
+.hsg-list-inline.hsg-list-inline-line li {
+  border-right: 1px solid #aaacb0;
+}
+.hsg-list-inline.hsg-list-inline-line li:first-child {
+  border-right: 0 none;
+}
+.hsg-list-line > li {
+  border-top: 1px solid #aaacb0;
+}
+.hsg-list-line > li:first-child {
+  border-top: 0 none;
+}
+.hsg-list-striped > li {
+  padding: 5px 5px;
+}
+.hsg-list-striped > li:nth-of-type(odd) {
+  background: #f5f5f5;
+}
+.hsg-list-space > li {
+  margin-top: 5px;
+  padding-top: 5px;
+}
+.hsg-list-space > li:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+/* Modifier: bullet and icons
+ ========================================================================== */
+.hsg-list-bullet > li:before,
+.hsg-list-bullet > li:after {
+  content: initial;
+  display: list-item;
+}
+.hsg-list-bullet > li:before {
+  height: 6px;
+  width: 6px;
+  background-color: #003f80;
+  content: "";
+  position: absolute;
+  top: 6px;
+  right: 0;
+}
+.hsg-list-bullet > li {
+  padding-right: 24px;
+  position: relative;
+}
+.hsg-list-icon-left.hsg-list-space li:first-child [class*='hsg-icon-'] {
+  top: 2px;
+}
+.hsg-list-icon-left.hsg-list-space li [class*='hsg-icon-'] {
+  top: 7px;
+}
+.hsg-list-icon-left > li {
+  position: relative;
+  padding-left: 20px;
+}
+.hsg-list-icon-left [class*='hsg-icon-'] {
+  position: absolute;
+  left: 1px;
+  top: 2px;
+}
+.hsg-list-icon-right.hsg-list-space li:first-child [class*='hsg-icon-'] {
+  top: 2px;
+}
+.hsg-list-icon-right.hsg-list-space li [class*='hsg-icon-'] {
+  top: 7px;
+}
+.hsg-list-icon-right > li {
+  position: relative;
+  padding-right: 20px;
+}
+.hsg-list-icon-right [class*='hsg-icon-'] {
+  position: absolute;
+  right: 1px;
+  top: 2px;
+}
+/* ========================================================================
+   Component: Description list
+ ========================================================================== */
+/* Modifiers
+ ========================================================================== */
+.hsg-dl-horizontal > dt {
+  color: #003f80;
+}
+.hsg-dl-horizontal > dt:first-child {
+  margin-top: 0;
+}
+.hsg-dl-horizontal > dt:first-child + dd {
+  margin-top: 0;
+}
+.hsg-dl-horizontal > dd {
+  margin-top: 8px;
+}
+@media (min-width: 518px) {
+  .hsg-dl-horizontal {
+    overflow: hidden;
+  }
+  .hsg-dl-horizontal > dt {
+    width: 140px;
+    float: right;
+    clear: both;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .hsg-dl-horizontal > dd {
+    margin-right: 148px;
+  }
+}
+.hsg-dl-line > dt {
+  font-weight: bold;
+}
+.hsg-dl-line > dt:nth-child(n+2) {
+  margin-top: 5px;
+  padding-top: 5px;
+  border-top: 1px solid #dddddd;
+}
+.hsg-dl-line > dd {
+  color: #999999;
+}
+/* Modifier: sizes
+ ========================================================================== */
+.hsg-dl-horizontal-small > dd {
+  margin-bottom: 0;
+}
+.hsg-dl-horizontal-large > dd {
+  margin-bottom: 16px;
+}
+/* ========================================================================
+   Component: Table
+ ========================================================================== */
+.hsg-table {
+  /* 1 */
+  width: 100%;
+  /* 2 */
+  /* 3 */
+  /* 4 */
+}
+* + .hsg-table {
+  margin-top: 15px;
+}
+.hsg-table th,
+.hsg-table td {
+  padding: 8px 8px;
+}
+.hsg-table th {
+  text-align: right;
+}
+.hsg-table td {
+  vertical-align: top;
+}
+.hsg-table thead th {
+  vertical-align: top;
+}
+.hsg-table caption,
+.hsg-table tfoot {
+  font-size: 12px;
+  font-style: italic;
+}
+.hsg-table caption {
+  text-align: right;
+  color: #999999;
+}
+/* Modifiers: Lines types
+ ========================================================================== */
+.hsg-table-responsive {
+  width: 100%;
+  overflow-y: auto;
+  _overflow: auto;
+  margin: 0 0 15px 0;
+  -webkit-overflow-scrolling: touch;
+}
+.hsg-table-responsive table {
+  margin-bottom: 0;
+}
+.hsg-table-responsive::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 14px;
+  height: 14px;
+}
+.hsg-table-responsive::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  border: 3px solid #fff;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+/* Modifiers: Lines types
+ ========================================================================== */
+.hsg-table-lines > thead th,
+.hsg-table-lines > tbody td {
+  border-bottom: 1px solid #cfd3df;
+}
+.hsg-table-lines > tbody > tr:last-child > td {
+  border-bottom: 0 none;
+}
+.hsg-table-lines > tfoot td {
+  border-top: 1px solid #cfd3df;
+}
+.hsg-table-lines > thead th,
+.hsg-table-lines > tbody td,
+.hsg-table-lines > tfoot td {
+  border-right: 1px solid #cfd3df;
+}
+.hsg-table-lines > thead th:first-child,
+.hsg-table-lines > tbody td:first-child,
+.hsg-table-lines > tfoot td:first-child {
+  border-right: 0 none;
+}
+.hsg-table-vertical-lines > thead th,
+.hsg-table-vertical-lines > tbody td,
+.hsg-table-vertical-lines > tfoot td {
+  border-right: 1px solid #cfd3df;
+}
+.hsg-table-vertical-lines > thead th:first-child,
+.hsg-table-vertical-lines > tbody td:first-child,
+.hsg-table-vertical-lines > tfoot td:first-child {
+  border-right: 0 none;
+}
+.hsg-table-horizontal-lines > thead th,
+.hsg-table-horizontal-lines > tbody td {
+  border-bottom: 1px solid #cfd3df;
+}
+.hsg-table-horizontal-lines > tbody > tr:last-child > td {
+  border-bottom: 0 none;
+}
+.hsg-table-horizontal-lines > tfoot td {
+  border-top: 1px solid #cfd3df;
+}
+/* Modifiers: Aligns
+ ========================================================================== */
+.hsg-table-middle,
+.hsg-table-middle td {
+  vertical-align: middle;
+}
+.hsg-table-text-center td,
+.hsg-table-text-center th {
+  text-align: center;
+}
+.hsg-table-text-right td,
+.hsg-table-text-right th {
+  text-align: right;
+}
+.hsg-table-text-left td,
+.hsg-table-text-left th {
+  text-align: left;
+}
+/* Modifiers: States
+ ========================================================================== */
+.hsg-table-striped tbody tr:nth-of-type(odd) {
+  background: #f5f5f5;
+}
+.hsg-table-condensed td {
+  padding: 4px 8px;
+}
+.hsg-table-hover tbody tr:hover {
+  background: #eeeeee;
+}
+/* Modifiers: Head types
+ ========================================================================== */
+.hsg-table-head-primary th {
+  background-color: #e0e8fa;
+  color: #003f80;
+  vertical-align: top;
+  border-bottom: 0 none !important;
+}
+.hsg-table-head-secondary th {
+  background-color: #d2d5e5;
+  color: #003f80;
+  vertical-align: top;
+  border-bottom: 0 none !important;
+}
+/* Modifiers: Foot types
+ ========================================================================== */
+.hsg-table-foot-sum tfoot td {
+  background-color: #eeeeee;
+  border-top: 1px solid #888888;
+  font-size: 15px;
+  font-weight: bold;
+}
+/* ========================================================================
+   Component: Form
+ ========================================================================== */
+/*
+ * 1. Reset style on iOS
+ * 2. IE8 doesnt recognize css3 attribute selectors
+ * 3. Fix checkbox & radio in IE8 to fallback to normal
+ * 4. Change browser input date native look
+ * 5. Change select native look
+ * 6. Remove yellow background from autocomplete input
+ * 7. Vertical align the text inside the select but also make the arrow smaller
+ * 8. Remove the select arrow image because the browser also shows the default arrow
+ * 9. Remove default arrow icon from firefox (-moz-appearance stopped working after firefox 30)
+ */
+.hsg-form {
+  margin: 0 0 2px 0;
+  /* 1 */
+  /* 2 */
+  /* 3 */
+  /* 4 */
+  /* 8 */
+  /* 5 */
+  /* 6 */
+  /* 7 */
+  /*
+     * Form Inputs
+     */
+  /* 4 */
+  /* 1 */
+  /* 5 */
+  /* 6 */
+}
+.hsg-form label {
+  margin-bottom: 4px;
+  color: #003f80;
+}
+.hsg-form input[type="checkbox"] + label,
+.hsg-form input[type="radio"] + label {
+  display: inline;
+  margin-bottom: 0;
+}
+.hsg-form > :last-child {
+  margin-bottom: 0;
+}
+.hsg-form select::-ms-expand {
+  display: none;
+}
+.hsg-form select::-ms-value {
+  background-color: transparent;
+  color: #585858;
+}
+.hsg-form .hsg-form-text {
+  margin-bottom: 4px;
+}
+.hsg-form :invalid {
+  box-shadow: none;
+}
+.hsg-form :-ms-input-placeholder {
+  color: #b7b7b7 !important;
+}
+.hsg-form ::-moz-placeholder {
+  color: #b7b7b7;
+}
+.hsg-form ::-webkit-input-placeholder {
+  color: #b7b7b7;
+}
+.hsg-form :disabled:-ms-input-placeholder {
+  color: #9b9b9b !important;
+}
+.hsg-form :disabled::-moz-placeholder {
+  color: #9b9b9b;
+}
+.hsg-form :disabled::-webkit-input-placeholder {
+  color: #9b9b9b;
+}
+.hsg-form input[type="date"] {
+  text-align: right;
+  -webkit-align-items: center;
+  display: -webkit-inline-flex;
+  font-family: monospace;
+  overflow: hidden;
+  padding: 0;
+  -webkit-padding-start: 1px;
+  background: transparent !important;
+}
+.hsg-form input[type="date"]::-webkit-inner-spin-button,
+.hsg-form input[type="date"]::-webkit-calendar-picker-indicator {
+  direction: ltr;
+  -webkit-appearance: none;
+}
+.hsg-form input[type="date"]::-webkit-datetime-edit-fields-wrapper {
+  direction: ltr;
+  text-align: left;
+}
+.hsg-form select,
+.hsg-form textarea,
+.hsg-form input:not([type]),
+.hsg-form input[type="text"],
+.hsg-form input[type="password"],
+.hsg-form input[type="datetime"],
+.hsg-form input[type="datetime-local"],
+.hsg-form input[type="date"],
+.hsg-form input[type="month"],
+.hsg-form input[type="time"],
+.hsg-form input[type="week"],
+.hsg-form input[type="number"],
+.hsg-form input[type="email"],
+.hsg-form input[type="url"],
+.hsg-form input[type="search"],
+.hsg-form input[type="tel"],
+.hsg-form input[type="color"] {
+  /* 1 */
+  height: 40px;
+  /* 2 */
+  max-width: 100%;
+  /* 3 */
+  padding: 1px 6px;
+  /* 4 */
+  width: 100%;
+  /* 5 */
+  word-wrap: normal;
+  /* 6 */
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  /* 7 */
+  border: 1px solid #99c1db;
+  background: #ffffff;
+  color: #585858;
+  font-size: 19px;
+  margin: 0 0 2px 0;
+  border-radius: 0;
+  /* Focus state */
+  /* Disabled state */
+  /* IE8 ignores this and put strange shadow around the text */
+}
+.hsg-form select:disabled,
+.hsg-form textarea:disabled,
+.hsg-form input:not([type]):disabled,
+.hsg-form input[type="text"]:disabled,
+.hsg-form input[type="password"]:disabled,
+.hsg-form input[type="datetime"]:disabled,
+.hsg-form input[type="datetime-local"]:disabled,
+.hsg-form input[type="date"]:disabled,
+.hsg-form input[type="month"]:disabled,
+.hsg-form input[type="time"]:disabled,
+.hsg-form input[type="week"]:disabled,
+.hsg-form input[type="number"]:disabled,
+.hsg-form input[type="email"]:disabled,
+.hsg-form input[type="url"]:disabled,
+.hsg-form input[type="search"]:disabled,
+.hsg-form input[type="tel"]:disabled,
+.hsg-form input[type="color"]:disabled {
+  cursor: not-allowed;
+  border-color: #e5e5e5;
+  background-color: #f7f6f6;
+  color: #9b9b9b;
+}
+.hsg-form select:focus,
+.hsg-form textarea:focus,
+.hsg-form input:not([type]):focus,
+.hsg-form input[type="text"]:focus,
+.hsg-form input[type="password"]:focus,
+.hsg-form input[type="datetime"]:focus,
+.hsg-form input[type="datetime-local"]:focus,
+.hsg-form input[type="date"]:focus,
+.hsg-form input[type="month"]:focus,
+.hsg-form input[type="time"]:focus,
+.hsg-form input[type="week"]:focus,
+.hsg-form input[type="number"]:focus,
+.hsg-form input[type="email"]:focus,
+.hsg-form input[type="url"]:focus,
+.hsg-form input[type="search"]:focus,
+.hsg-form input[type="tel"]:focus,
+.hsg-form input[type="color"]:focus {
+  border-color: #6996b3;
+  outline: 0;
+  background-color: #ffffff;
+  color: #333333;
+}
+.hsg-form input.hsg-focus,
+.hsg-form select.hsg-focus,
+.hsg-form textarea.hsg-focus {
+  border-color: #6996b3;
+  outline: 0;
+  background-color: #ffffff;
+  color: #333333;
+}
+.hsg-form textarea {
+  overflow: auto;
+}
+.hsg-form select,
+.hsg-form textarea,
+.hsg-form input:not([type]),
+.hsg-form input[type="text"],
+.hsg-form input[type="date"],
+.hsg-form input[type="password"],
+.hsg-form input[type="email"],
+.hsg-form input[type="url"],
+.hsg-form input[type="search"],
+.hsg-form input[type="tel"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+.hsg-form select {
+  background: #ffffff url("../images/select-arrow.png") no-repeat 8px center scroll;
+  padding-left: 36px;
+}
+.hsg-form input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 100px white inset;
+}
+/* 9 */
+@-moz-document url-prefix() {
+  .hsg-form select {
+    background-image: none !important;
+  }
+}
+.hsg-form-asterix {
+  color: #c80b0b !important;
+  font-size: 12px;
+}
+/* 2 */
+.ie8 .hsg-form input,
+.ie8 .hsg-form select,
+.ie8 .hsg-form textarea {
+  /* 1 */
+  height: 40px;
+  /* 2 */
+  max-width: 100%;
+  /* 3 */
+  padding: 1px 6px;
+  /* 4 */
+  width: 100%;
+  /* 5 */
+  word-wrap: normal;
+  /* 6 */
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  /* 7 */
+  border: 1px solid #99c1db;
+  background: #ffffff;
+  color: #585858;
+  font-size: 19px;
+  margin: 0 0 2px 0;
+  border-radius: 0;
+  /* Focus state */
+  /* Disabled state */
+  /* IE8 ignores this and put strange shadow around the text */
+  line-height: 40px;
+}
+.ie8 .hsg-form input:disabled,
+.ie8 .hsg-form select:disabled,
+.ie8 .hsg-form textarea:disabled {
+  cursor: not-allowed;
+  border-color: #e5e5e5;
+  background-color: #f7f6f6;
+  color: #9b9b9b;
+}
+.ie8 .hsg-form input:focus,
+.ie8 .hsg-form textarea:focus {
+  border-color: #6996b3;
+  outline: 0;
+  background-color: #ffffff;
+  color: #333333;
+}
+/* 7 */
+.ie8 .hsg-form select {
+  padding-left: 8px 6px 8px 4px;
+}
+/* 3 */
+.ie8 .hsg-form input[type="checkbox"],
+.ie8 .hsg-form input[type="radio"] {
+  border: 0 none;
+  width: auto;
+  width: initial;
+  height: auto;
+  height: initial;
+  line-height: initial;
+}
+/* 8 */
+.ie9 .hsg-form select {
+  background-image: none;
+}
+/* Sub-component: Legend
+ ========================================================================== */
+/*
+ * 1. 'margin-bottom' is not working in Safari and Opera.
+ *    Using 'padding' and :after instead to create the border
+ * 2. Style
+ */
+legend {
+  width: 100%;
+  /* 1 */
+  padding-bottom: 15px;
+  /* 2 */
+  font-size: 18px;
+  line-height: 30px;
+}
+legend:after {
+  content: "";
+  display: block;
+  border-bottom: 1px solid #dddddd;
+}
+/* Custom inputs
+ ========================================================================== */
+/*
+ * Custom phone input
+ * 1. fix for ie8 so the item will stretch
+ * 2. Turn Off Number Input Spinners
+ */
+.hsg-form-phone {
+  /* 1 */
+  width: 100%;
+}
+.hsg-form-phone:before,
+.hsg-form-phone:after {
+  /* 1 */
+  content: " ";
+  /* 2 */
+  display: table;
+}
+.hsg-form-phone:after {
+  clear: both;
+}
+.hsg-form-phone .hsg-form-phone-number {
+  margin-left: 98px;
+}
+.hsg-form-phone .hsg-form-phone-number input {
+  text-align: left;
+  /* 2 */
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
+  margin: 0;
+}
+.hsg-form-phone .hsg-form-phone-area {
+  float: left;
+  width: 90px;
+}
+/*
+ * Custom radio input
+ * 1. Max-width on IE8 breaks the last word on line
+ * 2. needed when we want to display input without text
+ * 3. fix checkbox and radio button on IE8 (using selectivizer)
+ */
+/* 1 */
+.ie8 .hsg-custom-input > input {
+  max-width: none;
+}
+.hsg-custom-input {
+  display: inline-block;
+  padding: 4px 0;
+  /* Base for label styling */
+  /* radio aspect */
+  /* radio mark aspect */
+  /* radio mark aspect changes */
+  /* disabled radio */
+  /* TODO: check needed accessibility */
+  /*[type="radio"]:checked:focus + label:before,
+    [type="radio"]:not(:checked):focus + label:before {
+      border: 1px dotted blue;
+    }*/
+}
+.hsg-custom-input [type="radio"]:not(:checked),
+.hsg-custom-input [type="radio"]:checked {
+  position: absolute;
+  right: -9999px;
+}
+.hsg-custom-input [type="radio"]:not(:checked) + label,
+.hsg-custom-input [type="radio"]:checked + label {
+  position: relative;
+  padding-right: 36px;
+  line-height: 32px;
+  cursor: pointer;
+  color: #585858;
+  display: inline-block;
+}
+.hsg-custom-input [type="radio"]:not(:checked) + label:empty,
+.hsg-custom-input [type="radio"]:checked + label:empty {
+  /* 2 */
+  padding-right: 1px;
+}
+.hsg-custom-input [type="radio"]:not(:checked) + label:before,
+.hsg-custom-input [type="radio"]:checked + label:before {
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 27px;
+  height: 27px;
+  border: 1px solid #99c1db;
+  background: #fff;
+  border-radius: 50%;
+}
+.hsg-custom-input [type="radio"]:not(:checked) + label:after,
+.hsg-custom-input [type="radio"]:checked + label:after {
+  content: '';
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  width: 13px;
+  height: 13px;
+  background-color: #003f80;
+  border-radius: 50%;
+}
+.hsg-custom-input [type="radio"]:checked + label {
+  color: #003f80;
+}
+.hsg-custom-input [type="radio"]:not(:checked) + label:after {
+  opacity: 0;
+  transform: scale(0);
+}
+.hsg-custom-input [type="radio"]:checked + label:after {
+  opacity: 1;
+  transform: scale(1);
+}
+.hsg-custom-input [type="radio"]:disabled:not(:checked) + label:before,
+.hsg-custom-input [type="radio"]:disabled:checked + label:before {
+  border-color: #e5e5e5;
+  background-color: #f7f6f6;
+  cursor: default;
+}
+.hsg-custom-input [type="radio"]:disabled:checked + label:after {
+  background-color: #9b9b9b;
+  cursor: default;
+}
+.hsg-custom-input [type="radio"]:disabled + label {
+  color: #9b9b9b !important;
+  cursor: default;
+}
+/* 3 */
+.ie8 .hsg-custom-input [type="checkbox"] + label:after {
+  top: -3px;
+  right: 2px;
+}
+.ie8 .hsg-custom-input [type="checkbox"].slvzr-not4058checked41 + LABEL:after {
+  content: "";
+}
+.ie8 .hsg-custom-input [type="radio"].slvzr-not4058checked41 + LABEL:after {
+  content: inherit;
+}
+/*
+ * Custom checkbox input
+ */
+.hsg-custom-input {
+  display: inline-block;
+  padding: 4px 0;
+  /* Base for label styling */
+  /* checkbox aspect */
+  /* checked mark aspect */
+  /* checked mark aspect changes */
+  /* disabled checkbox */
+  /* TODO: check needed accessibility */
+  /*[type="checkbox"]:checked:focus + label:before,
+    [type="checkbox"]:not(:checked):focus + label:before {
+      border: 1px dotted blue;
+    }*/
+}
+.hsg-custom-input [type="checkbox"]:not(:checked),
+.hsg-custom-input [type="checkbox"]:checked {
+  position: absolute;
+  right: -9999px;
+}
+.hsg-custom-input [type="checkbox"]:not(:checked) + label,
+.hsg-custom-input [type="checkbox"]:checked + label {
+  position: relative;
+  padding-right: 36px;
+  line-height: 32px;
+  cursor: pointer;
+  color: #585858;
+  display: inline-block;
+}
+.hsg-custom-input [type="checkbox"]:not(:checked) + label:empty,
+.hsg-custom-input [type="checkbox"]:checked + label:empty {
+  /* 2 */
+  padding-right: 1px;
+  display: inline;
+}
+.hsg-custom-input [type="checkbox"]:checked + label {
+  color: #003f80;
+}
+.hsg-custom-input [type="checkbox"]:not(:checked) + label:before,
+.hsg-custom-input [type="checkbox"]:checked + label:before {
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 27px;
+  height: 27px;
+  border: 1px solid #99c1db;
+  background: #fff;
+}
+.hsg-custom-input [type="checkbox"]:not(:checked) + label:after,
+.hsg-custom-input [type="checkbox"]:checked + label:after {
+  content: '✔';
+  position: absolute;
+  top: 0;
+  right: 4px;
+  font-size: 20px;
+  color: #003f80;
+}
+.hsg-custom-input [type="checkbox"]:not(:checked) + label:after:empty,
+.hsg-custom-input [type="checkbox"]:checked + label:after:empty {
+  top: 8px;
+}
+.hsg-custom-input [type="checkbox"]:not(:checked) + label:after {
+  opacity: 0;
+  transform: scale(0);
+}
+.hsg-custom-input [type="checkbox"]:checked + label:after {
+  opacity: 1;
+  transform: scale(1);
+}
+.hsg-custom-input [type="checkbox"]:disabled:not(:checked) + label:before,
+.hsg-custom-input [type="checkbox"]:disabled:checked + label:before {
+  border-color: #e5e5e5;
+  background-color: #f7f6f6;
+  cursor: default;
+}
+.hsg-custom-input [type="checkbox"]:disabled + label {
+  color: #9b9b9b !important;
+  cursor: default;
+}
+/* Size modifiers
+ * Higher specificity needed to override defaults
+ ========================================================================== */
+.hsg-form-small {
+  height: 30px !important;
+  line-height: 30px !important;
+  padding: 3px 3px !important;
+  font-size: 15px !important;
+}
+.hsg-form-large {
+  height: 50px !important;
+  line-height: 50px !important;
+  padding: 8px 6px !important;
+  font-size: 24px !important;
+}
+.hsg-form-line {
+  height: 40px !important;
+}
+/* Reset height
+ * Must be after size modifiers
+ ========================================================================== */
+.hsg-form textarea,
+.hsg-form select[multiple],
+.hsg-form select[size] {
+  height: auto;
+}
+/*
+ * Error state
+ */
+.hsg-form-danger {
+  border-color: #c80b0b !important;
+  color: #c80b0b !important;
+}
+.hsg-form-danger > input,
+.hsg-form-danger > select,
+.hsg-form-danger > label,
+.hsg-form-danger > [type="radio"]:not(:checked) + label:before,
+.hsg-form-danger > [type="radio"]:checked + label:before,
+.hsg-form-danger > [type="checkbox"]:not(:checked) + label:after,
+.hsg-form-danger > [type="checkbox"]:checked + label:after,
+.hsg-form-danger > [type="checkbox"]:not(:checked) + label:before,
+.hsg-form-danger > [type="checkbox"]:checked + label:before {
+  border-color: #c80b0b !important;
+  color: #c80b0b !important;
+}
+.hsg-form-danger > [type="radio"]:not(:checked) + label:after,
+.hsg-form-danger > [type="radio"]:checked + label:after {
+  background-color: #c80b0b !important;
+}
+/*
+ * Success state
+ */
+.hsg-form-success {
+  border-color: #388540 !important;
+  color: #388540 !important;
+}
+.hsg-form-success > input,
+.hsg-form-success > select,
+.hsg-form-success > label,
+.hsg-form-success > [type="radio"]:not(:checked) + label:before,
+.hsg-form-success > [type="radio"]:checked + label:before,
+.hsg-form-success > [type="checkbox"]:not(:checked) + label:after,
+.hsg-form-success > [type="checkbox"]:checked + label:after,
+.hsg-form-success > [type="checkbox"]:not(:checked) + label:before,
+.hsg-form-success > [type="checkbox"]:checked + label:before {
+  border-color: #388540 !important;
+  color: #388540 !important;
+}
+.hsg-form-success > [type="radio"]:not(:checked) + label:after,
+.hsg-form-success > [type="radio"]:checked + label:after {
+  background-color: #388540 !important;
+}
+/* Size sub-modifiers
+ ========================================================================== */
+/*
+ * Fixed widths
+ * Different widths for mini sized 'input' and 'select' elements
+ * Must be inside form class to overwrite parent width declaration
+ */
+.hsg-form input.hsg-form-width-mini {
+  width: 40px;
+}
+.hsg-form select.hsg-form-width-mini {
+  width: 65px;
+}
+.hsg-form input.hsg-form-width-small,
+.hsg-form textarea.hsg-form-width-small,
+.hsg-form select.hsg-form-width-small {
+  max-width: 130px;
+}
+.hsg-form input.hsg-form-width-medium,
+.hsg-form textarea.hsg-form-width-medium,
+.hsg-form select.hsg-form-width-medium {
+  max-width: 200px;
+}
+.hsg-form input.hsg-form-width-large,
+.hsg-form textarea.hsg-form-width-large,
+.hsg-form select.hsg-form-width-large {
+  max-width: 500px;
+}
+/* Sub-objects: 'hsg-form-row'
+ * Groups labels and controls in rows
+ ========================================================================== */
+/*
+ * 1. Needed for 'hsg-form-horizontal' modifier
+ * 2. Vertical gutter
+ */
+.hsg-form-group {
+  /* 1 */
+  /* 2 */
+}
+.hsg-form-group:before,
+.hsg-form-group:after {
+  /* 1 */
+  content: " ";
+  /* 2 */
+  display: table;
+}
+.hsg-form-group:after {
+  clear: both;
+}
+.hsg-form-group + .hsg-form-group {
+  margin-top: 15px;
+}
+.hsg-form-group:first-child {
+  margin-top: 0;
+}
+/* Modifier: 'hsg-form-horizontal'
+ ========================================================================== */
+/*
+ * 1. Match inputs heights in other lines
+ */
+/* Tablet portrait and smaller */
+@media (max-width: 1012px) {
+  /* Behave like vertical form */
+  .hsg-form-horizontal .hsg-form-group > label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+  }
+  .hsg-form-horizontal .hsg-form-group .hsg-form-text {
+    /* 1 */
+    min-height: 40px;
+  }
+}
+/* Desktop and bigger */
+@media (min-width: 1013px) {
+  .hsg-form-horizontal .hsg-form-group > label {
+    width: 140px;
+    margin-top: 8px;
+    display: inline-block;
+    float: right;
+  }
+  .hsg-form-horizontal .hsg-form-group .hsg-form-controls {
+    margin-right: 148px;
+  }
+  .hsg-form-horizontal .hsg-form-group .hsg-form-text {
+    padding-top: 8px;
+    margin: 0 148px 0 0;
+    /* 1 */
+    min-height: 40px;
+  }
+}
+/* horizontal form always - even on small views */
+.hsg-form-horizontal-always .hsg-form-group > label {
+  width: 140px;
+  margin-top: 8px;
+  display: inline-block;
+  float: right;
+}
+.hsg-form-horizontal-always .hsg-form-group .hsg-form-controls {
+  margin-right: 148px;
+}
+.hsg-form-horizontal-always .hsg-form-group .hsg-form-text {
+  padding-top: 8px;
+  margin: 0 148px 0 0;
+  /* 1 */
+  min-height: 40px;
+}
+/* Sub-object: 'hsg-form-icon'
+ ========================================================================== */
+.hsg-form-icon {
+  position: relative;
+  display: inline-block;
+  max-width: 100%;
+  width: 100%;
+}
+.hsg-form-icon > [class*='hsg-icon-'] {
+  position: absolute;
+  top: 50%;
+  left: 6px;
+  width: 19px;
+  margin-top: -10px;
+}
+.hsg-form-icon input,
+.hsg-form-icon input[type="text"] {
+  padding-left: 38px;
+}
+.hsg-form-icon-flip > input {
+  padding-left: 19px !important;
+}
+/*
+ * Sub-modifier: 'hsg-form-icon-flip'
+ */
+.hsg-form-icon-flip > [class*='hsg-icon-'] {
+  right: 0;
+}
+.hsg-form-icon-flip > input {
+  padding-right: 19px !important;
+}
+/* ========================================================================
+   Component: Grid
+ ========================================================================== */
+.hsg-g {
+  /* 1 */
+  margin: 0 -8px 0 0;
+  /* 2 */
+  padding: 0;
+  list-style: none;
+  /*
+     * Grid cell
+     * 1. Makes grid more robust so that it can be used with other block elements
+     * 2. Create horizontal gutter
+     * 3. 'float' is set by default so columns always behave the same and create a new block format context
+     * 4. CHECK: Makes sure all elements under grid will have margins when changing breakpoints
+     */
+  /*
+     * Remove margin from the last-child
+     * not working in IE8
+     */
+  /* Grid gutter
+     ========================================================================== */
+  /*
+     * Vertical gutter
+     * TODO: i dont think i need this because i always put bottom margin
+     * on column ".hsg-c > * {margin-bottom: 8px;}"
+     * i will keep checking it out
+     */
+  /*
+     * This class is set by JavaScript and applies a vertical gutter if the columns stack or float into the next row
+     * Higher specificity to override margin
+     */
+  /*
+     * Vertical gutter for panels and strips
+     * '.hsg-panel' must be exact name. watch 'panel.less' for more details
+     * '.hsg-strip' must be exact name. watch 'strip.less' for more details
+     */
+  /*
+     * in order for push/pull columns to work we need to make them relative
+     */
+  /*
+     * Mini gutter. Higher specificity to override regular gutter
+     */
+  /*
+     * Small gutter. Higher specificity to override regular gutter
+     */
+  /*
+     * Large gutter. Higher specificity to override regular gutter
+     */
+}
+.hsg-g:before,
+.hsg-g:after {
+  /* 1 */
+  content: " ";
+  /* 2 */
+  display: table;
+}
+.hsg-g:after {
+  clear: both;
+}
+.hsg-g > * {
+  /* 1 */
+  margin: 0;
+  /* 2 */
+  padding-right: 8px;
+  /* 3 */
+  float: right;
+  /* 4 */
+}
+.hsg-g > * > :last-child {
+  margin-bottom: 0;
+}
+.hsg-g + .hsg-g {
+  margin-top: 8px;
+}
+.hsg-g > .hsg-grid-margin {
+  margin-top: 8px;
+}
+.hsg-g > [class*='hsg-c-push-'],
+.hsg-g > [class*='hsg-c-pull-'] {
+  position: relative;
+}
+.hsg-g.hsg-g-mini {
+  margin-right: -2px;
+  /* 1 */
+}
+.hsg-g.hsg-g-mini > * {
+  padding-right: 2px;
+}
+.hsg-g.hsg-g-mini > * > .hsg-panel + .hsg-panel {
+  margin-top: 2px;
+}
+.hsg-g.hsg-g-small {
+  margin-right: -4px;
+  /* 1 */
+}
+.hsg-g.hsg-g-small > * {
+  padding-right: 4px;
+}
+.hsg-g.hsg-g-small > * > .hsg-panel + .hsg-panel {
+  margin-top: 4px;
+}
+.hsg-g.hsg-g-large {
+  margin-right: -25px;
+  /* 1 */
+}
+.hsg-g.hsg-g-large > * {
+  padding-right: 25px;
+}
+.hsg-g.hsg-g-large > * > .hsg-panel + .hsg-panel {
+  margin-top: 25px;
+}
+/*
+ * Grid columns.
+ * build columns width, columns push, columns pull
+ */
+[class*='hsg-c-'] {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  /* 1 */
+  min-height: 1px;
+}
+.hsg-c-12 {
+  width: 100%;
+}
+.hsg-c-11 {
+  width: 91.66666667%;
+}
+.hsg-c-10 {
+  width: 83.33333333%;
+}
+.hsg-c-9 {
+  width: 75%;
+}
+.hsg-c-8 {
+  width: 66.66666667%;
+}
+.hsg-c-7 {
+  width: 58.33333333%;
+}
+.hsg-c-6 {
+  width: 50%;
+}
+.hsg-c-5 {
+  width: 41.66666667%;
+}
+.hsg-c-4 {
+  width: 33.33333333%;
+}
+.hsg-c-3 {
+  width: 25%;
+}
+.hsg-c-2 {
+  width: 16.66666667%;
+}
+.hsg-c-1 {
+  width: 8.33333333%;
+}
+@media (min-width: 518px) {
+  .hsg-c-small-12 {
+    width: 100%;
+  }
+  .hsg-c-small-11 {
+    width: 91.66666667%;
+  }
+  .hsg-c-small-10 {
+    width: 83.33333333%;
+  }
+  .hsg-c-small-9 {
+    width: 75%;
+  }
+  .hsg-c-small-8 {
+    width: 66.66666667%;
+  }
+  .hsg-c-small-7 {
+    width: 58.33333333%;
+  }
+  .hsg-c-small-6 {
+    width: 50%;
+  }
+  .hsg-c-small-5 {
+    width: 41.66666667%;
+  }
+  .hsg-c-small-4 {
+    width: 33.33333333%;
+  }
+  .hsg-c-small-3 {
+    width: 25%;
+  }
+  .hsg-c-small-2 {
+    width: 16.66666667%;
+  }
+  .hsg-c-small-1 {
+    width: 8.33333333%;
+  }
+  .hsg-c-pull-small-12 {
+    right: -100%;
+  }
+  .hsg-c-pull-small-11 {
+    right: -91.66666667%;
+  }
+  .hsg-c-pull-small-10 {
+    right: -83.33333333%;
+  }
+  .hsg-c-pull-small-9 {
+    right: -75%;
+  }
+  .hsg-c-pull-small-8 {
+    right: -66.66666667%;
+  }
+  .hsg-c-pull-small-7 {
+    right: -58.33333333%;
+  }
+  .hsg-c-pull-small-6 {
+    right: -50%;
+  }
+  .hsg-c-pull-small-5 {
+    right: -41.66666667%;
+  }
+  .hsg-c-pull-small-4 {
+    right: -33.33333333%;
+  }
+  .hsg-c-pull-small-3 {
+    right: -25%;
+  }
+  .hsg-c-pull-small-2 {
+    right: -16.66666667%;
+  }
+  .hsg-c-pull-small-1 {
+    right: -8.33333333%;
+  }
+  .hsg-c-pull-small-0 {
+    right: auto;
+  }
+  .hsg-c-push-small-12 {
+    right: 100%;
+  }
+  .hsg-c-push-small-11 {
+    right: 91.66666667%;
+  }
+  .hsg-c-push-small-10 {
+    right: 83.33333333%;
+  }
+  .hsg-c-push-small-9 {
+    right: 75%;
+  }
+  .hsg-c-push-small-8 {
+    right: 66.66666667%;
+  }
+  .hsg-c-push-small-7 {
+    right: 58.33333333%;
+  }
+  .hsg-c-push-small-6 {
+    right: 50%;
+  }
+  .hsg-c-push-small-5 {
+    right: 41.66666667%;
+  }
+  .hsg-c-push-small-4 {
+    right: 33.33333333%;
+  }
+  .hsg-c-push-small-3 {
+    right: 25%;
+  }
+  .hsg-c-push-small-2 {
+    right: 16.66666667%;
+  }
+  .hsg-c-push-small-1 {
+    right: 8.33333333%;
+  }
+  .hsg-c-push-small-0 {
+    right: auto;
+  }
+}
+@media (min-width: 765px) {
+  .hsg-c-medium-12 {
+    width: 100%;
+  }
+  .hsg-c-medium-11 {
+    width: 91.66666667%;
+  }
+  .hsg-c-medium-10 {
+    width: 83.33333333%;
+  }
+  .hsg-c-medium-9 {
+    width: 75%;
+  }
+  .hsg-c-medium-8 {
+    width: 66.66666667%;
+  }
+  .hsg-c-medium-7 {
+    width: 58.33333333%;
+  }
+  .hsg-c-medium-6 {
+    width: 50%;
+  }
+  .hsg-c-medium-5 {
+    width: 41.66666667%;
+  }
+  .hsg-c-medium-4 {
+    width: 33.33333333%;
+  }
+  .hsg-c-medium-3 {
+    width: 25%;
+  }
+  .hsg-c-medium-2 {
+    width: 16.66666667%;
+  }
+  .hsg-c-medium-1 {
+    width: 8.33333333%;
+  }
+  .hsg-c-pull-medium-12 {
+    right: -100%;
+  }
+  .hsg-c-pull-medium-11 {
+    right: -91.66666667%;
+  }
+  .hsg-c-pull-medium-10 {
+    right: -83.33333333%;
+  }
+  .hsg-c-pull-medium-9 {
+    right: -75%;
+  }
+  .hsg-c-pull-medium-8 {
+    right: -66.66666667%;
+  }
+  .hsg-c-pull-medium-7 {
+    right: -58.33333333%;
+  }
+  .hsg-c-pull-medium-6 {
+    right: -50%;
+  }
+  .hsg-c-pull-medium-5 {
+    right: -41.66666667%;
+  }
+  .hsg-c-pull-medium-4 {
+    right: -33.33333333%;
+  }
+  .hsg-c-pull-medium-3 {
+    right: -25%;
+  }
+  .hsg-c-pull-medium-2 {
+    right: -16.66666667%;
+  }
+  .hsg-c-pull-medium-1 {
+    right: -8.33333333%;
+  }
+  .hsg-c-pull-medium-0 {
+    right: auto;
+  }
+  .hsg-c-push-medium-12 {
+    right: 100%;
+  }
+  .hsg-c-push-medium-11 {
+    right: 91.66666667%;
+  }
+  .hsg-c-push-medium-10 {
+    right: 83.33333333%;
+  }
+  .hsg-c-push-medium-9 {
+    right: 75%;
+  }
+  .hsg-c-push-medium-8 {
+    right: 66.66666667%;
+  }
+  .hsg-c-push-medium-7 {
+    right: 58.33333333%;
+  }
+  .hsg-c-push-medium-6 {
+    right: 50%;
+  }
+  .hsg-c-push-medium-5 {
+    right: 41.66666667%;
+  }
+  .hsg-c-push-medium-4 {
+    right: 33.33333333%;
+  }
+  .hsg-c-push-medium-3 {
+    right: 25%;
+  }
+  .hsg-c-push-medium-2 {
+    right: 16.66666667%;
+  }
+  .hsg-c-push-medium-1 {
+    right: 8.33333333%;
+  }
+  .hsg-c-push-medium-0 {
+    right: auto;
+  }
+}
+@media (min-width: 1013px) {
+  .hsg-c-large-12 {
+    width: 100%;
+  }
+  .hsg-c-large-11 {
+    width: 91.66666667%;
+  }
+  .hsg-c-large-10 {
+    width: 83.33333333%;
+  }
+  .hsg-c-large-9 {
+    width: 75%;
+  }
+  .hsg-c-large-8 {
+    width: 66.66666667%;
+  }
+  .hsg-c-large-7 {
+    width: 58.33333333%;
+  }
+  .hsg-c-large-6 {
+    width: 50%;
+  }
+  .hsg-c-large-5 {
+    width: 41.66666667%;
+  }
+  .hsg-c-large-4 {
+    width: 33.33333333%;
+  }
+  .hsg-c-large-3 {
+    width: 25%;
+  }
+  .hsg-c-large-2 {
+    width: 16.66666667%;
+  }
+  .hsg-c-large-1 {
+    width: 8.33333333%;
+  }
+  .hsg-c-pull-large-12 {
+    right: -100%;
+  }
+  .hsg-c-pull-large-11 {
+    right: -91.66666667%;
+  }
+  .hsg-c-pull-large-10 {
+    right: -83.33333333%;
+  }
+  .hsg-c-pull-large-9 {
+    right: -75%;
+  }
+  .hsg-c-pull-large-8 {
+    right: -66.66666667%;
+  }
+  .hsg-c-pull-large-7 {
+    right: -58.33333333%;
+  }
+  .hsg-c-pull-large-6 {
+    right: -50%;
+  }
+  .hsg-c-pull-large-5 {
+    right: -41.66666667%;
+  }
+  .hsg-c-pull-large-4 {
+    right: -33.33333333%;
+  }
+  .hsg-c-pull-large-3 {
+    right: -25%;
+  }
+  .hsg-c-pull-large-2 {
+    right: -16.66666667%;
+  }
+  .hsg-c-pull-large-1 {
+    right: -8.33333333%;
+  }
+  .hsg-c-pull-large-0 {
+    right: auto;
+  }
+  .hsg-c-push-large-12 {
+    right: 100%;
+  }
+  .hsg-c-push-large-11 {
+    right: 91.66666667%;
+  }
+  .hsg-c-push-large-10 {
+    right: 83.33333333%;
+  }
+  .hsg-c-push-large-9 {
+    right: 75%;
+  }
+  .hsg-c-push-large-8 {
+    right: 66.66666667%;
+  }
+  .hsg-c-push-large-7 {
+    right: 58.33333333%;
+  }
+  .hsg-c-push-large-6 {
+    right: 50%;
+  }
+  .hsg-c-push-large-5 {
+    right: 41.66666667%;
+  }
+  .hsg-c-push-large-4 {
+    right: 33.33333333%;
+  }
+  .hsg-c-push-large-3 {
+    right: 25%;
+  }
+  .hsg-c-push-large-2 {
+    right: 16.66666667%;
+  }
+  .hsg-c-push-large-1 {
+    right: 8.33333333%;
+  }
+  .hsg-c-push-large-0 {
+    right: auto;
+  }
+}
+/*
+ * Grid even columns
+ */
+[class*='hsg-ec'] > * {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  /* 1 */
+  min-height: 1px;
+}
+.hsg-ec-12 > * {
+  width: 8.33333333%;
+}
+.hsg-ec-11 > * {
+  width: 9.09090909%;
+}
+.hsg-ec-10 > * {
+  width: 10%;
+}
+.hsg-ec-9 > * {
+  width: 11.11111111%;
+}
+.hsg-ec-8 > * {
+  width: 12.5%;
+}
+.hsg-ec-7 > * {
+  width: 14.28571429%;
+}
+.hsg-ec-6 > * {
+  width: 16.66666667%;
+}
+.hsg-ec-5 > * {
+  width: 20%;
+}
+.hsg-ec-4 > * {
+  width: 25%;
+}
+.hsg-ec-3 > * {
+  width: 33.33333333%;
+}
+.hsg-ec-2 > * {
+  width: 50%;
+}
+.hsg-ec-1 > * {
+  width: 100%;
+}
+@media (min-width: 518px) {
+  .hsg-ec-small-12 > * {
+    width: 8.33333333%;
+  }
+  .hsg-ec-small-11 > * {
+    width: 9.09090909%;
+  }
+  .hsg-ec-small-10 > * {
+    width: 10%;
+  }
+  .hsg-ec-small-9 > * {
+    width: 11.11111111%;
+  }
+  .hsg-ec-small-8 > * {
+    width: 12.5%;
+  }
+  .hsg-ec-small-7 > * {
+    width: 14.28571429%;
+  }
+  .hsg-ec-small-6 > * {
+    width: 16.66666667%;
+  }
+  .hsg-ec-small-5 > * {
+    width: 20%;
+  }
+  .hsg-ec-small-4 > * {
+    width: 25%;
+  }
+  .hsg-ec-small-3 > * {
+    width: 33.33333333%;
+  }
+  .hsg-ec-small-2 > * {
+    width: 50%;
+  }
+  .hsg-ec-small-1 > * {
+    width: 100%;
+  }
+}
+@media (min-width: 765px) {
+  .hsg-ec-medium-12 > * {
+    width: 8.33333333%;
+  }
+  .hsg-ec-medium-11 > * {
+    width: 9.09090909%;
+  }
+  .hsg-ec-medium-10 > * {
+    width: 10%;
+  }
+  .hsg-ec-medium-9 > * {
+    width: 11.11111111%;
+  }
+  .hsg-ec-medium-8 > * {
+    width: 12.5%;
+  }
+  .hsg-ec-medium-7 > * {
+    width: 14.28571429%;
+  }
+  .hsg-ec-medium-6 > * {
+    width: 16.66666667%;
+  }
+  .hsg-ec-medium-5 > * {
+    width: 20%;
+  }
+  .hsg-ec-medium-4 > * {
+    width: 25%;
+  }
+  .hsg-ec-medium-3 > * {
+    width: 33.33333333%;
+  }
+  .hsg-ec-medium-2 > * {
+    width: 50%;
+  }
+  .hsg-ec-medium-1 > * {
+    width: 100%;
+  }
+}
+@media (min-width: 1013px) {
+  .hsg-ec-large-12 > * {
+    width: 8.33333333%;
+  }
+  .hsg-ec-large-11 > * {
+    width: 9.09090909%;
+  }
+  .hsg-ec-large-10 > * {
+    width: 10%;
+  }
+  .hsg-ec-large-9 > * {
+    width: 11.11111111%;
+  }
+  .hsg-ec-large-8 > * {
+    width: 12.5%;
+  }
+  .hsg-ec-large-7 > * {
+    width: 14.28571429%;
+  }
+  .hsg-ec-large-6 > * {
+    width: 16.66666667%;
+  }
+  .hsg-ec-large-5 > * {
+    width: 20%;
+  }
+  .hsg-ec-large-4 > * {
+    width: 25%;
+  }
+  .hsg-ec-large-3 > * {
+    width: 33.33333333%;
+  }
+  .hsg-ec-large-2 > * {
+    width: 50%;
+  }
+  .hsg-ec-large-1 > * {
+    width: 100%;
+  }
+}
+/* Modifier: 'hsg-g-divider'
+ ========================================================================== */
+/*
+ * Horizontal divider
+ * Does not work with 'hsg-push-*', 'hsg-pull-*' and not if the columns float into the next row
+ */
+.hsg-g-divider {
+  margin-left: -8px;
+  margin-right: -8px;
+  /* Tablet and bigger */
+  /* Desktop and bigger */
+}
+.hsg-g-divider > * {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+.hsg-g-divider > [class*='hsg-c-'] {
+  border-right: 1px solid #dddddd;
+}
+.hsg-g-divider > [class*='hsg-c-']:first-child {
+  border-right: 0 none;
+}
+@media (min-width: 765px) {
+  .hsg-g-divider > [class*='hsg-c-medium-'] {
+    border-right: 1px solid #dddddd;
+  }
+  .hsg-g-divider > [class*='hsg-c-medium-']:first-child {
+    border-right: 0 none;
+  }
+}
+@media (min-width: 1013px) {
+  .hsg-g-divider > [class*='hsg-c-large-'] {
+    border-right: 1px solid #dddddd;
+  }
+  .hsg-g-divider > [class*='hsg-c-large-']:first-child {
+    border-right: 0 none;
+  }
+}
+/*
+ * Vertical divider
+ */
+.hsg-g-divider-vertical {
+  margin-top: 8px;
+  margin-bottom: 8px;
+  border-top: 1px solid #dddddd;
+}
+/* ========================================================================
+   Component: Panel
+ ========================================================================== */
+.hsg-panel {
+  /* 1 */
+  display: block;
+  /* 2 */
+  position: relative;
+  /* 3 */
+  background-color: transparent;
+  padding: 0;
+}
+.hsg-panel:before,
+.hsg-panel:after {
+  /* 1 */
+  content: " ";
+  /* 2 */
+  display: table;
+}
+.hsg-panel:after {
+  clear: both;
+}
+.hsg-panel > :not(.hsg-panel-title):last-child {
+  margin-bottom: 0;
+}
+.hsg-panel + .hsg-panel {
+  margin-top: 8px;
+}
+/* Modifiers: types
+ ========================================================================== */
+.hsg-panel-light {
+  /* 1 */
+  display: block;
+  /* 2 */
+  position: relative;
+  /* 3 */
+  background-color: #ffffff;
+  padding: 15px;
+}
+.hsg-panel-light:before,
+.hsg-panel-light:after {
+  /* 1 */
+  content: " ";
+  /* 2 */
+  display: table;
+}
+.hsg-panel-light:after {
+  clear: both;
+}
+.hsg-panel-light > :not(.hsg-panel-title):last-child {
+  margin-bottom: 0;
+}
+.hsg-panel-primary {
+  /* 1 */
+  display: block;
+  /* 2 */
+  position: relative;
+  /* 3 */
+  background-color: #e8eaed;
+  padding: 15px;
+}
+.hsg-panel-primary:before,
+.hsg-panel-primary:after {
+  /* 1 */
+  content: " ";
+  /* 2 */
+  display: table;
+}
+.hsg-panel-primary:after {
+  clear: both;
+}
+.hsg-panel-primary > :not(.hsg-panel-title):last-child {
+  margin-bottom: 0;
+}
+.hsg-panel-secondary {
+  /* 1 */
+  display: block;
+  /* 2 */
+  position: relative;
+  /* 3 */
+  background-color: #e0e8fa;
+  padding: 15px;
+}
+.hsg-panel-secondary:before,
+.hsg-panel-secondary:after {
+  /* 1 */
+  content: " ";
+  /* 2 */
+  display: table;
+}
+.hsg-panel-secondary:after {
+  clear: both;
+}
+.hsg-panel-secondary > :not(.hsg-panel-title):last-child {
+  margin-bottom: 0;
+}
+.hsg-panel-dark {
+  /* 1 */
+  display: block;
+  /* 2 */
+  position: relative;
+  /* 3 */
+  background-color: #003f80;
+  padding: 15px;
+  color: #fff;
+}
+.hsg-panel-dark:before,
+.hsg-panel-dark:after {
+  /* 1 */
+  content: " ";
+  /* 2 */
+  display: table;
+}
+.hsg-panel-dark:after {
+  clear: both;
+}
+.hsg-panel-dark > :not(.hsg-panel-title):last-child {
+  margin-bottom: 0;
+}
+.hsg-panel-dark p,
+.hsg-panel-dark h1,
+.hsg-panel-dark h2,
+.hsg-panel-dark h3,
+.hsg-panel-dark h4,
+.hsg-panel-dark h5,
+.hsg-panel-dark h6,
+.hsg-panel-dark label {
+  color: #fff;
+}
+/* Sub-objects
+ ========================================================================== */
+.hsg-panel-title {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: normal;
+  color: #444444;
+}
+.hsg-panel-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 3;
+}
+/* Modifiers: padding
+ ========================================================================== */
+.hsg-panel-mini {
+  padding: 4px;
+}
+.hsg-panel-medium {
+  padding: 15px;
+}
+.hsg-panel-large {
+  padding: 24px 18px;
+}
+/* ========================================================================
+   Component: Strip
+ ========================================================================== */
+/*
+ * 1. allow smooth animation by moving strip to the GPU
+*/
+.hsg-strip {
+  display: table;
+  width: 100%;
+}
+.hsg-strip[data-hsg-strip-collapse] .hsg-strip-head {
+  padding-left: 54px;
+}
+.hsg-strip-side {
+  position: relative;
+  display: table-cell;
+  vertical-align: top;
+  width: 240px;
+  max-width: 240px;
+  background-color: #003f80;
+  color: #ffffff;
+  padding: 13px 12px 8px 12px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.hsg-strip-side [class^="hsg-icon-collapse-"] {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  margin-top: -10px;
+  border-right: 1px solid #fff;
+}
+.hsg-strip-side a,
+.hsg-strip-side a:hover {
+  color: #7ec5f3;
+}
+.hsg-strip-content {
+  display: table-cell;
+  vertical-align: top;
+  background-color: #ffffff;
+  color: #585858;
+}
+.hsg-strip-head {
+  position: relative;
+  padding: 13px 15px 10px 15px;
+}
+.hsg-strip-head > * {
+  margin: 0;
+}
+.hsg-strip-head + .hsg-strip-body {
+  padding-top: 8px;
+  border-top: 1px solid #ddd;
+}
+.hsg-strip-head [class^="hsg-icon-collapse-"] {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  margin-top: -10px;
+  border-right: 1px solid #ddd;
+  cursor: pointer;
+}
+.hsg-strip-body {
+  padding: 18px 15px;
+}
+.hsg-strip-title {
+  color: #ffffff;
+  font-size: 24px;
+  line-height: 30px;
+  margin: 0;
+}
+.hsg-strip-sub-title {
+  color: #ffffff;
+  margin: 4px 0 0 0;
+}
+@media (max-width: 1013px) {
+  .hsg-strip {
+    display: block;
+    /*
+    * 1. IE dont support 'initial' value on width & max-width
+    */
+  }
+  .hsg-strip-side,
+  .hsg-strip-content {
+    display: block;
+    /* 1 */
+    width: auto;
+    max-width: inherit;
+    width: initial;
+    max-width: initial;
+  }
+  .hsg-strip-side {
+    padding: 10px 10px;
+  }
+  .hsg-strip-body {
+    padding-top: 8px;
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+  .hsg-strip-head {
+    display: none;
+  }
+  .hsg-strip-title,
+  .hsg-strip-sub-title {
+    display: inline-block;
+    margin-bottom: 0;
+    margin-top: 0;
+    vertical-align: middle;
+  }
+  .hsg-strip-title {
+    margin-left: 14px;
+  }
+}
+.hsg-strip.hsg-opening {
+  /* 1 */
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+}
+.hsg-strip.hsg-strip-close .hsg-strip-body {
+  display: none;
+}
+.hsg-strip + .hsg-strip {
+  margin-top: 8px;
+}
+/* TODO: NOT WORKING FOR NOW.... add support for animation using transition instead of jquery animation
+ * 1. arbirtary max height so all content will always fit in
+*/
+/* Modifiers: Strip types
+ ========================================================================== */
+/*
+ * 1. Adding success icon to side
+ * 2. Adding danger icon to side
+ */
+.hsg-strip-primary > [class$="-side"] {
+  background-color: #002447;
+  color: #ffffff;
+}
+.hsg-strip-primary > [class$="-content"] {
+  background-color: #ffffff;
+  color: #585858;
+}
+.hsg-strip-secondary > [class$="-side"] {
+  background-color: #0164a5;
+  color: #ffffff;
+}
+.hsg-strip-secondary > [class$="-content"] {
+  background-color: #ffffff;
+  color: #585858;
+}
+.hsg-strip-success {
+  /* 1 */
+}
+.hsg-strip-success > [class$="-side"] {
+  background-color: #388540;
+  color: #ffffff;
+}
+.hsg-strip-success > [class$="-content"] {
+  background-color: #ffffff;
+  color: #585858;
+}
+.hsg-strip-success .hsg-strip-side {
+  position: relative;
+  text-align: center;
+}
+.hsg-strip-success .hsg-strip-title,
+.hsg-strip-success .hsg-strip-sub-title {
+  display: none;
+}
+@media (max-width: 1013px) {
+  .hsg-strip-success .hsg-strip-side {
+    text-align: right;
+  }
+  .hsg-strip-success i {
+    position: static;
+    margin: 0 0 0 14px;
+  }
+  .hsg-strip-success .hsg-strip-title,
+  .hsg-strip-success .hsg-strip-sub-title {
+    display: inline-block;
+  }
+}
+.hsg-strip-success .hsg-strip-side .hsg-strip-title {
+  margin-right: 60px;
+  margin-left: 0;
+}
+.hsg-strip-success .hsg-strip-side:before {
+  content: "";
+  display: inline-block;
+  background-image: url("../images/sprite-img2.png");
+  background-position: -31px -438px;
+  height: 46px;
+  width: 46px;
+}
+@media (max-width: 1013px) {
+  .hsg-strip-success .hsg-strip-side:before {
+    position: absolute;
+    top: 2px;
+    margin: 0 0 0 14px;
+  }
+}
+.hsg-strip-danger {
+  /* 2 */
+}
+.hsg-strip-danger > [class$="-side"] {
+  background-color: #c80b0b;
+  color: #ffffff;
+}
+.hsg-strip-danger > [class$="-content"] {
+  background-color: #ffffff;
+  color: #585858;
+}
+.hsg-strip-danger .hsg-strip-side {
+  position: relative;
+  text-align: center;
+}
+.hsg-strip-danger .hsg-strip-title,
+.hsg-strip-danger .hsg-strip-sub-title {
+  display: none;
+}
+@media (max-width: 1013px) {
+  .hsg-strip-danger .hsg-strip-side {
+    text-align: right;
+  }
+  .hsg-strip-danger i {
+    position: static;
+    margin: 0 0 0 14px;
+  }
+  .hsg-strip-danger .hsg-strip-title,
+  .hsg-strip-danger .hsg-strip-sub-title {
+    display: inline-block;
+  }
+}
+.hsg-strip-danger .hsg-strip-side .hsg-strip-title {
+  margin-right: 60px;
+  margin-left: 0;
+}
+.hsg-strip-danger .hsg-strip-side:before {
+  content: "";
+  display: inline-block;
+  background-image: url("../images/icons/danger-circle-o.png");
+  height: 46px;
+  width: 46px;
+}
+@media (max-width: 1013px) {
+  .hsg-strip-danger .hsg-strip-side:before {
+    position: static;
+    position: absolute;
+    top: 2px;
+    margin: 0 0 0 14px;
+  }
+}
+/* Modifiers: Strip padding
+ ========================================================================== */
+.hsg-strip-padding-small .hsg-strip-side {
+  padding: 8px;
+}
+.hsg-strip-padding-small .hsg-strip-head {
+  padding: 8px;
+}
+.hsg-strip-padding-small .hsg-strip-body {
+  padding: 8px;
+}
+.hsg-strip-padding-large .hsg-strip-side {
+  padding: 22px 16px;
+}
+.hsg-strip-padding-large .hsg-strip-head {
+  padding: 22px 16px;
+}
+.hsg-strip-padding-large .hsg-strip-body {
+  padding: 22px 16px;
+}
+.hsg-strip-no-padding .hsg-strip-body {
+  padding: 0;
+}
+/* Modifiers: Disable responsivness
+ ========================================================================== */
+@media (max-width: 1013px) {
+  .hsg-strip-disable-responsive > [class$="-side"] {
+    display: table-cell;
+    width: 240px;
+    max-width: 240px;
+  }
+  .hsg-strip-disable-responsive > [class$="-content"] {
+    display: table-cell;
+  }
+}
+/* ========================================================================
+   Component: Nav
+ ========================================================================== */
+/*
+ * 1. allow smooth animation by moving strip to the GPU
+*/
+.hsg-nav {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  /*
+   * Items
+   */
+}
+.hsg-nav li {
+  padding: 10px 27px;
+}
+.hsg-nav li.hsg-parent {
+  padding: 0;
+}
+.hsg-nav li.hsg-parent > a {
+  padding: 10px 27px;
+}
+.hsg-nav li.hsg-active {
+  background-color: #e0e8fa;
+  color: inherit;
+}
+.hsg-nav li:first-child {
+  border-top: 0 none;
+}
+.hsg-nav li > a {
+  display: block;
+  text-decoration: none;
+}
+.hsg-nav.hsg-opening {
+  /* 1 */
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+}
+/* State: 'hsg-nav-collapse'
+ ========================================================================== */
+.hsg-nav-collapse {
+  height: auto;
+  overflow: hidden;
+}
+@media (max-width: 764px) {
+  .hsg-nav-collapse.hsg-close {
+    height: 1px;
+  }
+}
+@media (min-width: 765px) {
+  .hsg-nav-collapse.hsg-close {
+    height: auto !important;
+  }
+}
+/* Sub-object: 'hsg-nav-toggle'
+ ========================================================================== */
+@media (min-width: 765px) {
+  .hsg-nav-toggle {
+    display: none;
+  }
+}
+/* Sub-object: 'hsg-nav-sub'
+ ========================================================================== */
+.hsg-nav-sub {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.hsg-nav-sub > li {
+  padding: 10px 54px 10px 10px;
+}
+/* Sub-object: 'hsg-nav-header'
+ ========================================================================== */
+li.hsg-nav-header {
+  padding: 10px 27px;
+  font-weight: normal;
+  font-size: 18px;
+  color: #585858;
+}
+li.hsg-nav-header-space {
+  padding: 40px 27px 10px 27px;
+}
+li.hsg-nav-header-space:first-child {
+  padding: 10px 27px;
+}
+/* Sub-object: 'hsg-nav-divider'
+ ========================================================================== */
+.hsg-nav-divider li {
+  border-top: 1px solid #dddddd;
+}
+.hsg-nav-divider li > ul {
+  border-top: 1px solid #dddddd;
+}
+/* Sub-object: 'hsg-nav-sub'
+ ========================================================================== */
+/*
+ * 'ul' needed for higher specificity to override padding
+ */
+/* Modifier 'hsg-nav-side'
+ ========================================================================== */
+/*
+ * Items
+ */
+.hsg-nav-side > li > a {
+  color: #444444;
+}
+/*
+ * Hover
+ * 1. Apply hover style also to focus state
+ * 2. Remove default focus style
+ */
+.hsg-nav-side > li > a:hover,
+.hsg-nav-side > li > a:focus {
+  background: rgba(0, 0, 0, 0.05);
+  color: #444444;
+  /* 2 */
+  outline: none;
+}
+/* Active */
+.hsg-nav-side > li.hsg-active > a {
+  background: #00a8e6;
+  color: #ffffff;
+}
+/*
+ * Sub-object: 'hsg-nav-header'
+ */
+.hsg-nav-side .hsg-nav-header {
+  color: #444444;
+}
+/*
+ * Sub-object: 'hsg-nav-divider'
+ */
+.hsg-nav-side .hsg-nav-divider {
+  border-top: 1px solid #dddddd;
+}
+/*
+ * Nested items
+ */
+.hsg-nav-side ul a {
+  color: #0077dd;
+}
+.hsg-nav-side ul a:hover {
+  color: #005599;
+}
+/* Modifier 'hsg-nav-navbar'
+ ========================================================================== */
+/*
+ * Items
+ */
+.hsg-nav-navbar > li > a {
+  color: #444444;
+}
+/*
+ * Hover
+ * 1. Apply hover style also to focus state
+ * 2. Remove default focus style
+ */
+.hsg-nav-navbar > li > a:hover,
+.hsg-nav-navbar > li > a:focus {
+  background: #00a8e6;
+  color: #ffffff;
+  /* 2 */
+  outline: none;
+}
+/*
+ * Sub-object: 'hsg-nav-header'
+ */
+.hsg-nav-navbar .hsg-nav-header {
+  color: #999999;
+}
+/*
+ * Sub-object: 'hsg-nav-divider'
+ */
+.hsg-nav-navbar .hsg-nav-divider {
+  border-top: 1px solid #dddddd;
+}
+/*
+ * Nested items
+ */
+.hsg-nav-navbar ul a {
+  color: #0077dd;
+}
+.hsg-nav-navbar ul a:hover {
+  color: #005599;
+}
+/* ========================================================================
+   Component: Pagination
+ ========================================================================== */
+/*
+ * 1. Remove default list style
+ * 2. Center pagination by default
+ * 3. Remove whitespace between child elements when using 'inline-block'
+ */
+.hsg-pagination {
+  /* 1 */
+  padding: 0 12px;
+  list-style: none;
+  /* 2 */
+  text-align: center;
+  /* 3 */
+  font-size: 0.001px;
+}
+/* Items
+ ========================================================================== */
+/*
+ * 1. Reset whitespace hack
+ * 2. Remove the gap at the bottom of it container
+ */
+.hsg-pagination > li {
+  display: inline-block;
+  /* 1 */
+  font-size: 20px;
+  /* 2 */
+  vertical-align: top;
+}
+/*
+ * 1. Makes pagination more robust against different box-sizing use
+ * 2. Reset text-align to center if alignment modifier is used
+ */
+.hsg-pagination > li > a,
+.hsg-pagination > li > span {
+  display: inline-block;
+  padding: 0 12px;
+  line-height: 32px;
+  text-decoration: none;
+  /* 1 */
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  /* 2 */
+  text-align: center;
+}
+/*
+ * Links
+ */
+.hsg-pagination > li > a {
+  color: #006cb2;
+}
+/*
+ * Hover
+ * 1. Apply hover style also to focus state
+ * 2. Remove default focus style
+ */
+.hsg-pagination > li > a:hover,
+.hsg-pagination > li > a:focus {
+  color: #003557;
+  /* 2 */
+  outline: none;
+}
+/*
+ * Active
+ */
+.hsg-pagination > .hsg-pagination-active > span {
+  color: #585858;
+}
+/*
+ * Disabled
+ */
+.hsg-pagination > .hsg-pagination-disabled > span {
+  color: #585858;
+}
+/* ========================================================================
+   Component: Button
+ ========================================================================== */
+.hsg-button {
+  /* 1 */
+  display: inline-block;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  vertical-align: middle;
+  text-decoration: none;
+  text-align: center;
+  /* 2 */
+  border: none;
+  /* 3 */
+  line-height: 40px;
+  /* 4 */
+  min-height: 40px;
+  /* 5 */
+  font-size: 18px;
+  /* 6 */
+  min-width: 100px;
+  padding: 0 12px;
+  background: #eeeeee;
+  color: #006cb2;
+  /*
+     * Hover state
+     * 1. Apply hover style also to focus state
+     * 2. Remove default focus style
+     * 3. Required for 'a' elements
+     */
+  /* Active state */
+  /* Disabled state
+     * Overrides also the color modifiers, Equal for all button types
+     */
+  /*
+     * Make sure that on small screen the button not breaks into multiple lines
+     */
+}
+.hsg-button:hover,
+.hsg-button:focus {
+  /* 1 */
+  background-color: #f5f5f5;
+  color: #006cb2;
+  /* 2 */
+  outline: none;
+  /* 3 */
+  text-decoration: none;
+}
+.hsg-button:active,
+.hsg-button.hsg-active {
+  background-color: #dddddd;
+  color: #006cb2;
+}
+.hsg-button:disabled,
+.hsg-button.hsg-disabled {
+  background-color: #e5e5e5;
+  color: #9b9b9b;
+  cursor: not-allowed;
+}
+.hsg-button:disabled:hover,
+.hsg-button.hsg-disabled:hover {
+  background-color: #e5e5e5;
+  color: #9b9b9b;
+}
+@media (max-width: 518px) {
+  .hsg-button {
+    word-wrap: normal;
+  }
+}
+/* Block modifiers
+ ========================================================================== */
+.hsg-button-block {
+  width: 100%;
+}
+/* Color modifiers
+ ========================================================================== */
+/*
+ * Modifier: 'hsg-button-primary'
+ */
+.hsg-button-primary {
+  background-color: #0164a5;
+  color: #ffffff;
+}
+.hsg-button-primary:hover,
+.hsg-button-primary:focus {
+  background-color: #00568c;
+  color: #ffffff;
+}
+.hsg-button-primary:active,
+.hsg-button-primary.hsg-active {
+  background-color: #00568c;
+  color: #ffffff;
+}
+/*
+ * Modifier: 'hsg-button-success'
+ */
+.hsg-button-success {
+  background-color: #388540;
+  color: #ffffff;
+}
+.hsg-button-success:hover,
+.hsg-button-success:focus {
+  background-color: #29612f;
+  color: #ffffff;
+}
+.hsg-button-success:active,
+.hsg-button-success.hsg-active {
+  background-color: #29612f;
+  color: #ffffff;
+}
+/*
+ * Modifier: 'hsg-button-danger'
+ */
+.hsg-button-danger {
+  background-color: #c80b0b;
+  color: #ffffff;
+}
+.hsg-button-danger:hover,
+.hsg-button-danger:focus {
+  background-color: #980808;
+  color: #ffffff;
+}
+.hsg-button-danger:active,
+.hsg-button-danger.hsg-active {
+  background-color: #980808;
+  color: #ffffff;
+}
+/* Modifier: 'hsg-button-link'
+ ========================================================================== */
+/* Reset */
+.hsg-button-link {
+  color: #006cb2;
+  border-color: transparent;
+  background: none;
+  min-width: initial;
+}
+.hsg-button-link:hover,
+.hsg-button-link:focus,
+.hsg-button-link:active,
+.hsg-button-link.hsg-active,
+.hsg-button-link:disabled {
+  border-color: transparent;
+  background: none;
+}
+.hsg-button-link:hover,
+.hsg-button-link:focus,
+.hsg-button-link:active,
+.hsg-button-link.hsg-active {
+  color: #003557;
+  text-decoration: underline;
+}
+.hsg-button-link:disabled {
+  color: #999999;
+}
+.hsg-button-link:focus {
+  outline: 1px dotted;
+}
+/* Size modifiers
+ ========================================================================== */
+.hsg-button-mini {
+  min-height: 20px;
+  padding: 0 6px;
+  line-height: 20px;
+  font-size: 11px;
+}
+.hsg-button-small {
+  min-height: 25px;
+  padding: 0 10px;
+  line-height: 25px;
+  font-size: 12px;
+}
+.hsg-button-large {
+  min-height: 65px;
+  padding: 0 20px;
+  line-height: 65px;
+  font-size: 20px;
+}
+/* ========================================================================
+   Component: Icon
+ ========================================================================== */
+[class*='hsg-icon-'] {
+  vertical-align: middle;
+  display: inline-block;
+  background-repeat: no-repeat;
+}
+.hsg-icon-dots {
+  background-image: url("../images/icons/dots.png");
+  background-position: 0 0;
+  width: 14px;
+  height: 22px;
+}
+.hsg-icon-first {
+  background-image: url("../images/sprite-img.png");
+  background-position: -167px -1853px;
+  width: 30px;
+  height: 30px;
+}
+.hsg-icon-first:hover {
+  background-position: -73px -1780px;
+}
+.hsg-icon-first-disable {
+  background-image: url("../images/sprite-img2.png");
+  background-position: 0 -596px;
+  width: 30px;
+  height: 30px;
+}
+.hsg-icon-last {
+  background-image: url("../images/sprite-img.png");
+  background-position: -111px -1212px;
+  width: 30px;
+  height: 30px;
+}
+.hsg-icon-last:hover {
+  background-position: -166px -1783px;
+}
+.hsg-icon-last-disable {
+  background-image: url("../images/sprite-img2.png");
+  background-position: 0 -527px;
+  width: 30px;
+  height: 30px;
+}
+.hsg-icon-prev {
+  background-image: url("../images/sprite-img.png");
+  background-position: -170px -34px;
+  width: 30px;
+  height: 30px;
+}
+.hsg-icon-prev:hover {
+  background-position: -114px -553px;
+}
+.hsg-icon-prev-disable {
+  background-image: url("../images/sprite-img2.png");
+  background-position: 0 -561px;
+  width: 30px;
+  height: 30px;
+}
+.hsg-icon-next {
+  background-image: url("../images/sprite-img.png");
+  background-position: -111px -1178px;
+  width: 30px;
+  height: 30px;
+}
+.hsg-icon-next:hover {
+  background-position: -113px -524px;
+}
+.hsg-icon-next-disable {
+  background-image: url("../images/sprite-img2.png");
+  background-position: 0 -493px;
+  width: 30px;
+  height: 30px;
+}
+.hsg-icon-print {
+  background-image: url("../images/sprite-img2.png");
+  background-position: -70px -174px;
+  height: 41px;
+  width: 41px;
+}
+.hsg-icon-print:hover {
+  background-position: -103px -1021px;
+}
+.hsg-icon-hourglass {
+  background-image: url("../images/sprite-img2.png");
+  background-position: -76px -1940px;
+  height: 20px;
+  width: 19px;
+}
+.hsg-icon-check {
+  background-image: url("../images/sprite-img2.png");
+  background-position: -95px -1940px;
+  height: 20px;
+  width: 20px;
+}
+.hsg-icon-angle-left {
+  background-image: url("../images/sprite-img2.png");
+  background-position: -151px -1793px;
+  height: 17px;
+  width: 10px;
+}
+.hsg-icon-arrow-left {
+  background-image: url("../images/sprite-img2.png");
+  background-position: 0 -1941px;
+  height: 18px;
+  width: 14px;
+}
+.hsg-icon-check-circle-o {
+  background-image: url("../images/sprite-img2.png");
+  background-position: -31px -438px;
+  height: 46px;
+  width: 46px;
+}
+.hsg-icon-danger-circle-o {
+  background-image: url("../images/icons/danger-circle-o.png");
+  height: 46px;
+  width: 46px;
+}
+.hsg-icon-info-circle {
+  background-image: url("../images/sprite-img2.png");
+  background-position: -183px -65px;
+  height: 17px;
+  width: 17px;
+}
+.hsg-icon-calendar {
+  background-image: url("../images/sprite-img2.png");
+  background-position: -113px -146px;
+  height: 19px;
+  width: 19px;
+}
+.hsg-icon-arrow-left-white {
+  background-image: url("../images/sprite-img.png");
+  background-position: -93px -295px;
+  height: 35px;
+  width: 22px;
+}
+.hsg-icon-arrow-right {
+  background-image: url("../images/icons/arrow-right-blue.png");
+  background-position: 0 0;
+  height: 35px;
+  width: 22px;
+}
+.hsg-icon-collapse-open {
+  background-image: url("../images/sprite-img2.png");
+  background-position: -7px -1332px;
+  height: 20px;
+  width: 31px;
+}
+.hsg-icon-collapse-close {
+  background-image: url("../images/sprite-img2.png");
+  background-position: -67px -1329px;
+  height: 20px;
+  width: 31px;
+}
+.hsg-icon-collapse-open-o {
+  background-image: url("../images/sprite-img2.png");
+  background-position: -81px -846px;
+  height: 20px;
+  width: 31px;
+}
+.hsg-icon-collapse-close-o {
+  background-image: url("../images/sprite-img2.png");
+  background-position: -115px -1123px;
+  height: 20px;
+  width: 31px;
+}
+.hsg-icon-tab-open {
+  background-image: url("../images/sprite-img.png");
+  background-position: 0 -658px;
+  height: 9px;
+  width: 16px;
+}
+.hsg-icon-tab-close {
+  background-image: url("../images/sprite-img.png");
+  background-position: 0 -748px;
+  height: 9px;
+  width: 16px;
+}
+.hsg-icon-sheet {
+  background-image: url("../images/sprite-img.png");
+  background-position: 0 -178px;
+  height: 28px;
+  width: 28px;
+}
+.hsg-icon-sheet:hover {
+  background-position: 0 -427px;
+}
+.hsg-icon-modal-close {
+  background-image: url("../images/sprite-img.png");
+  background-position: -122px -463px;
+  height: 26px;
+  width: 26px;
+}
+.hsg-icon-hamburger {
+  background-image: url("../images/icons/menu.png");
+  background-position: 0 0;
+  height: 22px;
+  width: 22px;
+}
+.hsg-icon-search {
+  background-image: url("../images/icons/search.png");
+  background-position: 0 0;
+  height: 22px;
+  width: 22px;
+}
+.hsg-icon-login {
+  background-image: url("../images/icons/user.png");
+  background-position: 0 0;
+  height: 22px;
+  width: 22px;
+}
+/* Top menu icons
+ ========================================================================== */
+.hsg-icon-top-insurance {
+  background-image: url("../images/MegaDropDown_Icons.png");
+  background-position: 0 0;
+  height: 39px;
+  width: 39px;
+}
+/* Cubes icons
+ ========================================================================== */
+.hsg-icon-heart {
+  background-image: url("../images/sprite-img2.png");
+  background-position: -38px -725px;
+  height: 28px;
+  width: 29px;
+}
+.hsg-icon-cube-open {
+  background-image: url("../images/sprite-img2.png");
+  background-position: -28px -1273px;
+  height: 26px;
+  width: 26px;
+}
+.hsg-icon-cube-open:hover {
+  background-position: -83px -1273px;
+}
+.hsg-icon-cube-close {
+  background-image: url("../images/sprite-img2.png");
+  background-position: 0 -1273px;
+  height: 26px;
+  width: 26px;
+}
+.hsg-icon-cube-close:hover {
+  background-position: -55px -1273px;
+}
+.hsg-icon-cube-body-close {
+  background-image: url("../images/sprite-img2.png");
+  background-position: -170px -1116px;
+  height: 27px;
+  width: 29px;
+}
+.hsg-icon-cube-body-close:hover {
+  background-position: -128px -802px;
+}
+/* SVG
+ ========================================================================== */
+/* ========================================================================
+   Component: Badge
+ ========================================================================== */
+.hsg-badge {
+  display: inline-block;
+  padding: 0 5px;
+  background: #999999;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 14px;
+  color: #ffffff;
+  text-align: center;
+  vertical-align: middle;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+  background-origin: border-box;
+}
+/* Modifier: 'hsg-badge-notification'
+ ========================================================================== */
+.hsg-badge-notification {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  min-width: 18px;
+  border-radius: 500px;
+  font-size: 12px;
+  line-height: 18px;
+}
+/* Color modifier
+ ========================================================================== */
+/*
+ * Modifier: 'hsg-badge-success'
+ */
+.hsg-badge-primary {
+  background-color: #0164a5;
+}
+/*
+ * Modifier: 'hsg-badge-success'
+ */
+.hsg-badge-success {
+  background-color: #388540;
+}
+/*
+ * Modifier: 'hsg-badge-danger'
+ */
+.hsg-badge-danger {
+  background-color: #c80b0b;
+}
+/* Modifier: Size (notification only)
+ ========================================================================== */
+.hsg-badge-small {
+  min-width: 16px;
+  font-size: 12px;
+  line-height: 16px;
+  padding-right: 0;
+  padding-left: 0;
+}
+/* ========================================================================
+   Component: Animation
+ ========================================================================== */
+[class*='hsg-animation-'] {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-timing-function: ease-out;
+  animation-timing-function: ease-out;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+/* ========================================================================
+   Modifier: Animation
+ ========================================================================== */
+.hsg-animation-infinite {
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+.hsg-animation-reverse {
+  -webkit-animation-direction: reverse;
+  animation-direction: reverse;
+}
+/* ========================================================================
+   Modifier: Rotate
+ ========================================================================== */
+.hsg-animation-rotate-half-left {
+  -webkit-animation-name: rotate-half-left;
+  animation-name: rotate-half-left;
+}
+@-webkit-keyframes rotate-half-left {
+  100% {
+    -webkit-transform: rotate(-180deg);
+    transform: rotate(-180deg);
+  }
+}
+@keyframes rotate-half-left {
+  100% {
+    -webkit-transform: rotate(-180deg);
+    -ms-transform: rotate(-180deg);
+    transform: rotate(-180deg);
+  }
+}
+.hsg-animation-rotate-half-right {
+  -webkit-animation-name: rotate-half-right;
+  animation-name: rotate-half-right;
+}
+@-webkit-keyframes rotate-half-right {
+  100% {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+}
+@keyframes rotate-half-right {
+  100% {
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+}
+.hsg-animation-rotate-full-left {
+  -webkit-animation-name: rotate-full-left;
+  animation-name: rotate-full-left;
+}
+@-webkit-keyframes rotate-full-left {
+  100% {
+    -webkit-transform: rotate(-360deg);
+    transform: rotate(-360deg);
+  }
+}
+@keyframes rotate-full-left {
+  100% {
+    -webkit-transform: rotate(-360deg);
+    -ms-transform: rotate(-360deg);
+    transform: rotate(-360deg);
+  }
+}
+.hsg-animation-rotate-full-right {
+  -webkit-animation-name: rotate-full-right;
+  animation-name: rotate-full-right;
+}
+@-webkit-keyframes rotate-full-right {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotate-full-right {
+  100% {
+    -webkit-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+/* ========================================================================
+   Modifier: Sizes
+ ========================================================================== */
+.hsg-animation-scale-up {
+  -webkit-animation-name: scale-up;
+  animation-name: scale-up;
+}
+@-webkit-keyframes scale-up {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.2);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+  }
+}
+@keyframes scale-up {
+  0% {
+    opacity: 0;
+    transform: scale(0.2);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.hsg-animation-scale-down {
+  -webkit-animation-name: scale-down;
+  animation-name: scale-down;
+}
+@-webkit-keyframes scale-down {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(1.8);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+  }
+}
+@keyframes scale-down {
+  0% {
+    opacity: 0;
+    transform: scale(1.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+/* ========================================================================
+   Modifier: Attention seekers
+ ========================================================================== */
+.hsg-animation-flash {
+  -webkit-animation-name: flash;
+  animation-name: flash;
+}
+@-webkit-keyframes flash {
+  0%,
+  50%,
+  100% {
+    opacity: 1;
+  }
+  25%,
+  75% {
+    opacity: 0;
+  }
+}
+@keyframes flash {
+  0%,
+  50%,
+  100% {
+    opacity: 1;
+  }
+  25%,
+  75% {
+    opacity: 0;
+  }
+}
+.hsg-animation-shake {
+  -webkit-animation-name: shake;
+  animation-name: shake;
+}
+@-webkit-keyframes shake {
+  0%,
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: translateX(-10px);
+    transform: translateX(-10px);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    -webkit-transform: translateX(10px);
+    transform: translateX(10px);
+  }
+}
+@keyframes shake {
+  0%,
+  100% {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: translateX(-10px);
+    -ms-transform: translateX(-10px);
+    transform: translateX(-10px);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    -webkit-transform: translateX(10px);
+    -ms-transform: translateX(10px);
+    transform: translateX(10px);
+  }
+}
+/* ========================================================================
+   Modifier: Fading Entrances
+ ========================================================================== */
+.hsg-animation-fade-in {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+}
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.hsg-animation-fade-in-down {
+  -webkit-animation-name: fadeInDown;
+  animation-name: fadeInDown;
+}
+@-webkit-keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-20px);
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-20px);
+    -ms-transform: translateY(-20px);
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+.hsg-animation-fade-in-left {
+  -webkit-animation-name: fadeInLeft;
+  animation-name: fadeInLeft;
+}
+@-webkit-keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-20px);
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-20px);
+    -ms-transform: translateX(-20px);
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+.hsg-animation-fade-in-right {
+  -webkit-animation-name: fadeInRight;
+  animation-name: fadeInRight;
+}
+@-webkit-keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(20px);
+    transform: translateX(20px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(20px);
+    -ms-transform: translateX(20px);
+    transform: translateX(20px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+.hsg-animation-fade-in-up {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+}
+@-webkit-keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+    -ms-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+/* ========================================================================
+   Modifier: Fading Exists
+ ========================================================================== */
+.hsg-animation-fade-out {
+  -webkit-animation-name: fadeOut;
+  animation-name: fadeOut;
+}
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.hsg-animation-fade-out-down {
+  -webkit-animation-name: fadeOutDown;
+  animation-name: fadeOutDown;
+}
+@-webkit-keyframes fadeOutDown {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+}
+@keyframes fadeOutDown {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+    -ms-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+}
+.hsg-animation-fade-out-left {
+  -webkit-animation-name: fadeOutLeft;
+  animation-name: fadeOutLeft;
+}
+@-webkit-keyframes fadeOutLeft {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(-20px);
+    transform: translateX(-20px);
+  }
+}
+@keyframes fadeOutLeft {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(-20px);
+    -ms-transform: translateX(-20px);
+    transform: translateX(-20px);
+  }
+}
+.hsg-animation-fade-out-right {
+  -webkit-animation-name: fadeOutRight;
+  animation-name: fadeOutRight;
+}
+@-webkit-keyframes fadeOutRight {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(20px);
+    transform: translateX(20px);
+  }
+}
+@keyframes fadeOutRight {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(20px);
+    -ms-transform: translateX(20px);
+    transform: translateX(20px);
+  }
+}
+.hsg-animation-fade-out-up {
+  -webkit-animation-name: fadeOutUp;
+  animation-name: fadeOutUp;
+}
+@-webkit-keyframes fadeOutUp {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-20px);
+    transform: translateY(-20px);
+  }
+}
+@keyframes fadeOutUp {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-20px);
+    -ms-transform: translateY(-20px);
+    transform: translateY(-20px);
+  }
+}
+/* ========================================================================
+   Component: Loading
+ ========================================================================== */
+.hsg-load {
+  position: relative;
+  background-color: #fff;
+}
+.hsg-load .hsg-load-loader {
+  display: block;
+  text-align: center;
+  margin: 8px auto;
+}
+.hsg-load .hsg-load-content {
+  opacity: 0;
+  display: none;
+}
+/* ========================================================================
+   Component: Loading Full Screen
+ ========================================================================== */
+.hsg-load-full {
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  min-height: 480px;
+  width: 100%;
+  height: 100%;
+  background: #003f80;
+}
+/* Sub-object: 'hsg-load-logo'
+ ========================================================================== */
+.hsg-load-full .hsg-load-logo {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  margin-left: -50px;
+  width: 100px;
+  cursor: default;
+  pointer-events: none;
+  text-align: center;
+  -webkit-animation-duration: 0.4s;
+  animation-duration: 0.4s;
+  -webkit-animation-name: loading-fadeInUp;
+  animation-name: loading-fadeInUp;
+}
+/* Sub-object: 'hsg-load-loader'
+ ========================================================================== */
+.hsg-load-full .hsg-load-loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -30px;
+  width: 60px;
+  cursor: default;
+  pointer-events: none;
+  text-align: center;
+  -webkit-animation-duration: 0.4s;
+  animation-duration: 0.4s;
+  -webkit-animation-name: loading-fadeInUp;
+  animation-name: loading-fadeInUp;
+}
+/* State: 'hsg-load-loaded'
+ ========================================================================== */
+.hsg-no-animation .hsg-load-loaded {
+  display: none;
+  opacity: 0;
+}
+.hsg-load-full.hsg-load-loaded {
+  -webkit-animation-duration: 0.4s;
+  animation-duration: 0.4s;
+  -webkit-animation-name: loading-loaded;
+  animation-name: loading-loaded;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+.hsg-load-loaded .hsg-load-content {
+  display: block;
+  opacity: 1;
+}
+/* Loading Animations
+ ========================================================================== */
+@-webkit-keyframes loading-fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+@keyframes loading-fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+    -ms-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+@-webkit-keyframes loading-loaded {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-20px);
+    transform: translateY(-20px);
+  }
+}
+@keyframes loading-loaded {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-20px);
+    -ms-transform: translateY(-20px);
+    transform: translateY(-20px);
+  }
+}
+@-webkit-keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+    -ms-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+/* ========================================================================
+   Component: Collapse
+ ========================================================================== */
+.hsg-collapse {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.hsg-collapse > li > div {
+  display: none;
+}
+.hsg-collapse > li > a.hsg-open + div {
+  display: block;
+}
+/* ========================================================================
+   Component: Tooltip
+ ========================================================================== */
+[data-hsg-tooltip] {
+  cursor: pointer;
+}
+/*
+ * 1. Hide by default
+ * 2. Set fixed position
+ * 3. Set dimensions
+ * 4. Set style
+ */
+.hsg-tooltip {
+  /* 1 */
+  display: none;
+  /* 2 */
+  position: absolute;
+  z-index: 1030;
+  /* 3 */
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  max-width: 280px;
+  padding: 10px 10px;
+  /* 4 */
+  border: 1px solid #979797;
+  background: #e7e9ee;
+  color: #003f80;
+  font-size: 14px;
+}
+.hsg-tooltip:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 5px solid #979797;
+}
+.hsg-tooltip h2 {
+  color: #003f80;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 18px;
+  margin: 0 0 4px 0;
+  padding: 0;
+}
+.hsg-tooltip p {
+  margin: 0 0 4px 0;
+  padding: 0;
+}
+.hsg-tooltip a {
+  display: block;
+  text-align: left;
+  padding: 4px 0 0 0;
+}
+/* Direction modifiers
+ ========================================================================== */
+/*
+ * Top
+ */
+.hsg-tooltip-top:after,
+.hsg-tooltip-top-left:after,
+.hsg-tooltip-top-right:after {
+  bottom: -5px;
+  border-top-style: solid;
+  border-bottom: none;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-top-color: #979797;
+}
+/*
+ * Bottom
+ */
+.hsg-tooltip-bottom:after,
+.hsg-tooltip-bottom-left:after,
+.hsg-tooltip-bottom-right:after {
+  top: -5px;
+  border-bottom-style: solid;
+  border-top: none;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-bottom-color: #979797;
+}
+/*
+ * Top/Bottom center
+ */
+.hsg-tooltip-top:after,
+.hsg-tooltip-bottom:after {
+  left: 50%;
+  margin-left: -5px;
+}
+/*
+ * Top/Bottom left
+ */
+.hsg-tooltip-top-left:after,
+.hsg-tooltip-bottom-left:after {
+  left: 10px;
+}
+/*
+ * Top/Bottom right
+ */
+.hsg-tooltip-top-right:after,
+.hsg-tooltip-bottom-right:after {
+  right: 10px;
+}
+/*
+ * Left
+ */
+.hsg-tooltip-left:after {
+  right: -5px;
+  top: 50%;
+  margin-top: -5px;
+  border-left-style: solid;
+  border-right: none;
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  border-left-color: #979797;
+}
+/*
+ * Right
+ */
+.hsg-tooltip-right:after {
+  left: -5px;
+  top: 50%;
+  margin-top: -5px;
+  border-right-style: solid;
+  border-left: none;
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  border-right-color: #979797;
+}
+/* ========================================================================
+   Component: Tab
+ ========================================================================== */
+/*
+ * 1. setting the content width according to the number of tabs
+ * 2. margin the content into place by the number of tabs
+ */
+.hsg-tab {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  /* 1 */
+  /*
+     * Items
+     */
+}
+.hsg-tab.hsg-ec-2 .hsg-tab-content {
+  width: 200%;
+}
+.hsg-tab.hsg-ec-3 .hsg-tab-content {
+  width: 300%;
+}
+.hsg-tab.hsg-ec-4 .hsg-tab-content {
+  width: 400%;
+}
+.hsg-tab.hsg-ec-5 .hsg-tab-content {
+  width: 500%;
+}
+.hsg-tab:before,
+.hsg-tab:after {
+  /* 1 */
+  content: " ";
+  /* 2 */
+  display: table;
+}
+.hsg-tab:after {
+  clear: both;
+}
+.hsg-tab > li {
+  float: right;
+  /* 2 */
+}
+.hsg-tab > li:nth-child(1) .hsg-tab-content {
+  margin-right: 0;
+}
+.hsg-tab > li:nth-child(2) .hsg-tab-content {
+  margin-right: -100%;
+}
+.hsg-tab > li:nth-child(3) .hsg-tab-content {
+  margin-right: -200%;
+}
+.hsg-tab > li:nth-child(4) .hsg-tab-content {
+  margin-right: -300%;
+}
+.hsg-tab > li:nth-child(5) .hsg-tab-content {
+  margin-right: -400%;
+}
+.hsg-tab > li:first-child > a {
+  border-right: 0 none;
+}
+@media (max-width: 517px) {
+  .hsg-tab {
+    border-bottom: 0 none;
+  }
+  .hsg-tab > li {
+    width: 100%;
+  }
+  .hsg-tab > li:first-child > a {
+    border-top: 0 none;
+  }
+}
+/* State: 'hsg-tab-active'
+ ========================================================================== */
+.hsg-tab-active > a {
+  border-bottom-color: #002447 !important;
+  color: #ffffff;
+  background-color: #002447 !important;
+  position: relative;
+}
+.hsg-tab-active > a:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 6px solid #ffffff;
+  bottom: -6px;
+  border-bottom-style: solid;
+  border-bottom: none;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-top-color: #002447;
+  left: 50%;
+  margin-left: -6px;
+  z-index: 9;
+}
+.hsg-tab-active .hsg-tab-content {
+  display: block;
+}
+@media (max-width: 517px) {
+  .hsg-tab-active > a:after {
+    content: none;
+  }
+}
+/* Sub-Component: 'hsg-tab-header'
+ ========================================================================== */
+/*
+ * 1. truncate words in headers to avoid big headers
+ * 2. needed to absolute position the icon inside the link
+ * 3. increase padding so text wont overlap the icon
+ */
+.hsg-tab-header {
+  /* 1 */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  /* 2 */
+  position: relative;
+  display: block;
+  text-decoration: none;
+  padding: 17px 12px;
+  font-size: 22px;
+  text-align: center;
+  background-color: #ffffff;
+  border-right: 1px solid #d5d5d5;
+  border-bottom: 1px solid #d5d5d5;
+}
+.hsg-tab-header [class^="hsg-icon-tab-"] {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  margin-top: -5px;
+}
+.hsg-tab-header:hover {
+  background-color: #edeff2;
+  text-decoration: none;
+}
+@media (max-width: 517px) {
+  .hsg-tab-header {
+    border-top: 1px solid #d5d5d5;
+    border-right: 0 none;
+    text-align: right;
+    /* 3 */
+    padding-left: 36px;
+  }
+  .hsg-tab-header [class^="hsg-icon-tab-"] {
+    display: block;
+  }
+}
+/* Sub-Component: 'hsg-tab-content'
+ ========================================================================== */
+.hsg-tab-content {
+  display: none;
+  background-color: transparent;
+  padding: 12px 12px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+@media (max-width: 517px) {
+  .hsg-tab-content {
+    margin-right: 0 !important;
+    width: 100% !important;
+  }
+}
+/* ========================================================================
+   Component: Modal
+ ========================================================================== */
+/*
+ * This is the modal overlay and modal dialog container
+ * 1. Hide by default
+ * 2. Set fixed position
+ * 3. Allow scrolling for the modal dialog
+ * 4. Mask the background page
+ * 5. Fade-in transition
+ * 6. Fix transition in Webkit
+ * 7. There is a bug in chromium with position fixed and -webkit-transform
+ *     Source: https://code.google.com/p/chromium/issues/detail?id=20574
+ * 8. add background opacity for ie8
+ */
+.hsg-modal {
+  /* 1 */
+  display: none;
+  /* 2 */
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1010;
+  /* 3 */
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  /* 4 */
+  background: rgba(0, 0, 0, 0.6);
+  /* 5 */
+  opacity: 0;
+  -webkit-transition: opacity 0.15s linear;
+  transition: opacity 0.15s linear;
+  /* 6 */
+  -webkit-transform: translateZ(0);
+  /* 7 */
+}
+@media screen and (-webkit-min-device-pixel-ratio: 0) and (max-width: 765px) {
+  .hsg-modal {
+    -webkit-transform: initial;
+  }
+}
+@media (max-width: 765px) {
+  .hsg-modal {
+    background: #fff;
+  }
+}
+.ie8 .hsg-modal {
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+}
+/*
+ * Open state
+ */
+.hsg-modal.hsg-open {
+  opacity: 1;
+}
+/*
+ * Prevents duplicated scrollbar caused by 3.
+ */
+.hsg-modal-page,
+.hsg-modal-page body {
+  overflow: hidden;
+}
+/* Sub-object: 'hsg-modal-dialog'
+ ========================================================================== */
+/*
+ * 1. Slide-in transition
+ * 2. There is a bug in chromium with position fixed and -webkit-transform
+ */
+.hsg-modal-dialog {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 4% auto;
+  padding: 0;
+  width: 600px;
+  max-width: 96%;
+  max-width: calc(100% - 20px);
+  background: #ffffff;
+  /* 1 */
+  opacity: 0;
+  -webkit-transform: translateY(100px);
+  transform: translateY(100px);
+  -webkit-transition: opacity 0.4s linear, -webkit-transform 0.4s ease-out;
+  transition: opacity 0.4s linear, transform 0.4s ease-out;
+  /* 2 */
+}
+@media (max-width: 765px) {
+  .hsg-modal-dialog {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 100%;
+    min-height: 100%;
+    background: #fff;
+  }
+}
+/*
+ * Open state
+ * 1. There is a bug in chromium with position fixed and -webkit-transform
+ */
+.hsg-open .hsg-modal-dialog {
+  /* 1 */
+  opacity: 1;
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+}
+/*
+ * Remove margin from the last-child
+ */
+.hsg-modal-dialog > :last-child {
+  margin-bottom: 0;
+}
+/* Sub-object: 'hsg-modal-header'
+ ========================================================================== */
+.hsg-modal-header {
+  padding: 20px 20px;
+  padding-bottom: 10px;
+  background-color: #003f80;
+  color: #ffffff;
+  position: relative;
+}
+.hsg-modal-header h2 {
+  color: #ffffff;
+  margin: 0;
+  margin-left: 30px;
+}
+/* Sub-object: 'hsg-modal-header'
+ ========================================================================== */
+.hsg-modal-content {
+  padding: 20px 20px;
+  padding-top: 10px;
+}
+/* Sub-object: 'hsg-modal-close'
+ ========================================================================== */
+.hsg-modal-close {
+  color: #ffffff;
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  display: block;
+  margin-top: -13px;
+  cursor: pointer;
+}
+/* ========================================================================
+   Component: Page Top
+ ========================================================================== */
+.hsg-top {
+  position: relative;
+  min-height: 44px;
+  background-color: #003f80;
+}
+.hsg-top .hsg-top-logo {
+  margin-right: 10px;
+  float: left;
+}
+.hsg-top .hsg-top-logo img {
+  height: 30px;
+}
+.hsg-top .hsg-top-logo > a {
+  padding-left: 0;
+}
+/* Sub-component: top container
+ ========================================================================== */
+.hsg-top-container {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  position: relative;
+  max-width: 1010px;
+  padding: 0 15px;
+  margin-left: auto;
+  margin-right: auto;
+  float: none;
+  clear: both;
+}
+@media (max-width: 1013px) {
+  .hsg-top-container {
+    max-width: 763px;
+    padding: 0 15px;
+  }
+}
+@media (max-width: 518px) {
+  .hsg-top-container {
+    padding: 0 8px;
+  }
+}
+.hsg-top-container:before,
+.hsg-top-container:after {
+  /* 1 */
+  content: " ";
+  /* 2 */
+  display: table;
+}
+.hsg-top-container:after {
+  clear: both;
+}
+/* Sub-component: top sub menu
+ ========================================================================== */
+.hsg-top-submenu > a {
+  position: relative;
+}
+.hsg-top-submenu > a .hsg-badge {
+  position: absolute;
+  top: 4px;
+  right: 2px;
+}
+@media (max-width: 765px) {
+  .hsg-top-submenu > a > span {
+    display: none;
+  }
+}
+/* Sub-component: top sub menu content
+ ========================================================================== */
+/*
+ * 1. content title
+ * 2. content list
+ * 3. content list item
+ * 4. content list item icon
+ * 5. content text
+ * 6. content form
+ */
+.hsg-top-submenu-content {
+  display: none;
+  position: absolute;
+  top: 44px;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  color: #fff;
+  /* 1 */
+  /* 2 */
+  /* 3 */
+  /* 4 */
+  /* 5 */
+  /* 6 */
+}
+.hsg-top-submenu-content .hsg-top-container {
+  background-color: #0164a5;
+  margin: 0 15px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+@media (max-width: 518px) {
+  .hsg-top-submenu-content .hsg-top-container {
+    margin: 0;
+  }
+}
+.hsg-top-submenu-content h2 {
+  margin: 0;
+  padding: 0;
+  color: #fff;
+}
+.hsg-top-submenu-content ul {
+  display: block;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  overflow: hidden;
+}
+.hsg-top-submenu-content ul + h2 {
+  margin-top: 16px;
+}
+.hsg-top-submenu-content li {
+  width: 25%;
+  float: right;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+@media (max-width: 765px) {
+  .hsg-top-submenu-content li {
+    width: 50%;
+  }
+}
+@media (max-width: 518px) {
+  .hsg-top-submenu-content li {
+    width: 100%;
+  }
+}
+.hsg-top-submenu-content li > a {
+  padding: 10px;
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  background-color: #003f80;
+  border: 1px solid #0164a5;
+  border-right-width: 0;
+  border-bottom-width: 0;
+}
+.hsg-top-submenu-content li > a:hover {
+  background-color: #002447;
+}
+.hsg-top-submenu-content i {
+  margin-left: 4px;
+}
+.hsg-top-submenu-content p {
+  margin: 4px 0;
+}
+.hsg-top-submenu-content .hsg-form input {
+  margin-bottom: 0;
+  border-color: #fff;
+}
+@media (max-width: 518px) {
+  .hsg-top-submenu-content .hsg-form input {
+    width: 100%;
+    display: block;
+    margin-bottom: 4px;
+  }
+}
+@media (max-width: 518px) {
+  .hsg-top-submenu-content .hsg-form button {
+    margin-top: 6px;
+  }
+}
+/* Sub-component: top list
+ ========================================================================== */
+.hsg-top-list {
+  display: block;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+.hsg-top-list > li {
+  float: right;
+}
+.hsg-top-list > li > a {
+  display: block;
+  padding: 0 10px;
+  color: #fff;
+  text-decoration: none;
+  line-height: 44px;
+}
+/* Sub-component: top menu
+ ========================================================================== */
+.hsg-top-menu {
+  display: none;
+}
+.hsg-top-menu li {
+  width: 50%;
+}
+.hsg-top-menu > a {
+  padding-right: 0;
+}
+@media (max-width: 1013px) {
+  .hsg-top-menu {
+    display: block;
+  }
+}
+@media (max-width: 765px) {
+  .hsg-top-menu li {
+    width: 100%;
+  }
+}
+/* Sub-component: top icons actions
+ ========================================================================== */
+.hsg-top-search {
+  float: left !important;
+}
+@media (min-width: 518px) {
+  .hsg-top-search input[type="text"] {
+    width: 76%;
+  }
+}
+.hsg-top-login {
+  float: left !important;
+}
+@media (min-width: 518px) {
+  .hsg-top-login input[type="text"] {
+    width: 38%;
+  }
+}
+/* State: active
+ ========================================================================== */
+.hsg-top-active > a {
+  background-color: #0164a5;
+}
+.hsg-top-active .hsg-top-submenu-content {
+  display: block;
+}
+/* State: collapse items
+ ========================================================================== */
+@media (max-width: 1013px) {
+  .hsg-top-collapse {
+    display: none;
+  }
+}
+.hsg-top-collapse > a:after {
+  content: "";
+  margin-right: 5px;
+  vertical-align: middle;
+  background-image: url("../images/icons/caret-down.png");
+  width: 9px;
+  height: 5px;
+  display: inline-block;
+}
+/* State: danger item
+ ========================================================================== */
+.hsg-top-danger > a,
+badge.hsg-top-danger > a:hover {
+  background-color: #c80b0b !important;
+}
+/* ========================================================================
+   Component: Page header
+ ========================================================================== */
+.hsg-header {
+  /* 1 */
+  margin: 0 -8px 0 0;
+  /* 2 */
+  padding: 0;
+  list-style: none;
+  /*
+     * Grid cell
+     * 1. Makes grid more robust so that it can be used with other block elements
+     * 2. Create horizontal gutter
+     * 3. 'float' is set by default so columns always behave the same and create a new block format context
+     * 4. CHECK: Makes sure all elements under grid will have margins when changing breakpoints
+     */
+  /*
+     * Remove margin from the last-child
+     * not working in IE8
+     */
+  /* Grid gutter
+     ========================================================================== */
+  /*
+     * Vertical gutter
+     * TODO: i dont think i need this because i always put bottom margin
+     * on column ".hsg-c > * {margin-bottom: 8px;}"
+     * i will keep checking it out
+     */
+  /*
+     * This class is set by JavaScript and applies a vertical gutter if the columns stack or float into the next row
+     * Higher specificity to override margin
+     */
+  /*
+     * Vertical gutter for panels and strips
+     * '.hsg-panel' must be exact name. watch 'panel.less' for more details
+     * '.hsg-strip' must be exact name. watch 'strip.less' for more details
+     */
+  /*
+     * in order for push/pull columns to work we need to make them relative
+     */
+  background-color: #002447;
+  min-height: 58px;
+  margin: 0 0 8px 0;
+}
+.hsg-header:before,
+.hsg-header:after {
+  /* 1 */
+  content: " ";
+  /* 2 */
+  display: table;
+}
+.hsg-header:after {
+  clear: both;
+}
+.hsg-header > * {
+  /* 1 */
+  margin: 0;
+  /* 2 */
+  padding-right: 8px;
+  /* 3 */
+  float: right;
+  /* 4 */
+}
+.hsg-header > * > :last-child {
+  margin-bottom: 0;
+}
+.hsg-header + .hsg-header {
+  margin-top: 8px;
+}
+.hsg-header > .hsg-grid-margin {
+  margin-top: 8px;
+}
+.hsg-header > [class*='hsg-c-push-'],
+.hsg-header > [class*='hsg-c-pull-'] {
+  position: relative;
+}
+.hsg-header * {
+  color: #ffffff;
+}
+.hsg-header > * {
+  margin-bottom: 0;
+}
+.hsg-header > .hsg-header-title {
+  /* 1 */
+  /* 1 */
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  /* 1 */
+  min-height: 1px;
+  padding: 15px 10px;
+}
+@media (min-width: 518px) {
+  .hsg-header > .hsg-header-title {
+    width: 83.33333333%;
+  }
+}
+@media (min-width: 765px) {
+  .hsg-header > .hsg-header-title {
+    width: 50%;
+  }
+}
+@media (min-width: 1013px) {
+  .hsg-header > .hsg-header-title {
+    width: 66.66666667%;
+  }
+}
+.hsg-header > .hsg-header-title:only-child {
+  padding-bottom: 15px;
+}
+@media (max-width: 518px) {
+  .hsg-header > .hsg-header-title {
+    padding-bottom: 0;
+    width: initial;
+    width: auto;
+  }
+}
+.hsg-header > .hsg-header-title h1 {
+  margin-bottom: 0;
+}
+.hsg-header > .hsg-header-title h2 {
+  font-size: 20px;
+  margin-top: 0;
+  color: #eeeeee;
+}
+@media (min-width: 765px) {
+  .hsg-header > .hsg-header-title h2 {
+    display: none !important;
+  }
+}
+.hsg-header > .hsg-header-actions {
+  /* 1 */
+  /* 1 */
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  /* 1 */
+  min-height: 1px;
+  padding: 15px 10px;
+}
+@media (min-width: 518px) {
+  .hsg-header > .hsg-header-actions {
+    width: 16.66666667%;
+  }
+}
+@media (min-width: 765px) {
+  .hsg-header > .hsg-header-actions {
+    width: 50%;
+  }
+}
+@media (min-width: 1013px) {
+  .hsg-header > .hsg-header-actions {
+    width: 33.33333333%;
+  }
+}
+@media (max-width: 518px) {
+  .hsg-header > .hsg-header-actions {
+    float: left;
+    width: initial;
+    width: auto;
+  }
+}
+.hsg-header > .hsg-header-actions ul {
+  padding: 0;
+  list-style: none;
+  float: left;
+  margin: 0;
+  display: inline;
+  line-height: 0;
+  padding-right: 8px;
+}
+.hsg-header > .hsg-header-actions ul > li {
+  display: inline-block;
+  padding-left: 10px;
+}
+.hsg-header > .hsg-header-actions ul > li:last-child {
+  padding-left: 0;
+}
+@media (max-width: 518px) {
+  .hsg-header > .hsg-header-actions ul > li {
+    display: block;
+    padding-left: 0;
+  }
+}
+.hsg-header > .hsg-header-actions ul > li:first-child {
+  padding-left: 0;
+}
+.hsg-header > .hsg-header-actions ul a {
+  display: inline-block;
+}
+.hsg-header > .hsg-header-actions h2 {
+  font-size: 20px;
+  margin: 0;
+  float: left;
+  line-height: 42px;
+}
+@media (max-width: 765px) {
+  .hsg-header > .hsg-header-actions h2 {
+    display: none !important;
+  }
+}
+/* ========================================================================
+   Component: Page Footer
+ ========================================================================== */
+/*
+ * 1. fix ie8 container strange width problem
+ */
+.hsg-footer .hsg-footer-container {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  position: relative;
+  max-width: 1010px;
+  padding: 0 15px;
+  margin-left: auto;
+  margin-right: auto;
+  float: none;
+  clear: both;
+}
+@media (max-width: 1013px) {
+  .hsg-footer .hsg-footer-container {
+    max-width: 763px;
+    padding: 0 15px;
+  }
+}
+@media (max-width: 518px) {
+  .hsg-footer .hsg-footer-container {
+    padding: 0 8px;
+  }
+}
+.hsg-footer .hsg-footer-container:before,
+.hsg-footer .hsg-footer-container:after {
+  /* 1 */
+  content: " ";
+  /* 2 */
+  display: table;
+}
+.hsg-footer .hsg-footer-container:after {
+  clear: both;
+}
+/* Sub-Object: footer links
+ ========================================================================== */
+.hsg-footer-links {
+  text-align: center;
+  background-color: #003f80;
+  padding: 8px 0;
+  margin: 0;
+  list-style: none;
+}
+.hsg-footer-links li {
+  display: inline-block;
+  padding: 0 30px;
+  border-right: 1px solid #4e749b;
+}
+.hsg-footer-links li:first-child {
+  border-right: 0 none;
+}
+.hsg-footer-links li a {
+  color: #ffffff;
+  font-size: 14px;
+}
+/* ========================================================================
+   Component: Actions strip
+ ========================================================================== */
+.hsg-actions-strip {
+  padding: 14px 12px;
+  background-color: #ffffff;
+  margin: 8px 0 0 0;
+}
+.hsg-actions-strip-header {
+  color: #003f80;
+  border-bottom: 1px solid #d5d5d5;
+  font-size: 20px;
+  line-height: 30px;
+  margin-bottom: 18px;
+}
+.hsg-actions-strip-content {
+  /* 1 */
+  margin: 0 -8px 0 0;
+  /* 2 */
+  padding: 0;
+  list-style: none;
+  /*
+     * Grid cell
+     * 1. Makes grid more robust so that it can be used with other block elements
+     * 2. Create horizontal gutter
+     * 3. 'float' is set by default so columns always behave the same and create a new block format context
+     * 4. CHECK: Makes sure all elements under grid will have margins when changing breakpoints
+     */
+  /*
+     * Remove margin from the last-child
+     * not working in IE8
+     */
+  /* Grid gutter
+     ========================================================================== */
+  /*
+     * Vertical gutter
+     * TODO: i dont think i need this because i always put bottom margin
+     * on column ".hsg-c > * {margin-bottom: 8px;}"
+     * i will keep checking it out
+     */
+  /*
+     * This class is set by JavaScript and applies a vertical gutter if the columns stack or float into the next row
+     * Higher specificity to override margin
+     */
+  /*
+     * Vertical gutter for panels and strips
+     * '.hsg-panel' must be exact name. watch 'panel.less' for more details
+     * '.hsg-strip' must be exact name. watch 'strip.less' for more details
+     */
+  /*
+     * in order for push/pull columns to work we need to make them relative
+     */
+}
+.hsg-actions-strip-content:before,
+.hsg-actions-strip-content:after {
+  /* 1 */
+  content: " ";
+  /* 2 */
+  display: table;
+}
+.hsg-actions-strip-content:after {
+  clear: both;
+}
+.hsg-actions-strip-content > * {
+  /* 1 */
+  margin: 0;
+  /* 2 */
+  padding-right: 8px;
+  /* 3 */
+  float: right;
+  /* 4 */
+}
+.hsg-actions-strip-content > * > :last-child {
+  margin-bottom: 0;
+}
+.hsg-actions-strip-content + .hsg-actions-strip-content {
+  margin-top: 8px;
+}
+.hsg-actions-strip-content > .hsg-grid-margin {
+  margin-top: 8px;
+}
+.hsg-actions-strip-content > [class*='hsg-c-push-'],
+.hsg-actions-strip-content > [class*='hsg-c-pull-'] {
+  position: relative;
+}
+.hsg-actions-strip-text {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  /* 1 */
+  min-height: 1px;
+}
+@media (min-width: 518px) {
+  .hsg-actions-strip-text {
+    width: 50%;
+  }
+}
+.hsg-actions-strip-actions {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  /* 1 */
+  min-height: 1px;
+  text-align: left;
+}
+@media (min-width: 518px) {
+  .hsg-actions-strip-actions {
+    width: 50%;
+  }
+}
+.hsg-actions-strip-actions button {
+  margin: 0 12px 0 0;
+}
+@media (max-width: 518px) {
+  .hsg-actions-strip-actions {
+    text-align: right;
+    margin: 14px 0 0 0;
+  }
+}
+/* ========================================================================
+   Component: Cubes
+ ========================================================================== */
+/*
+ * 1. allow smooth animation by moving strip to the GPU
+*/
+.hsg-cubes {
+  padding: 0;
+  list-style: none;
+  width: 100%;
+  background-color: #ffffff;
+}
+.hsg-cubes.hsg-opening {
+  /* 1 */
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+}
+.hsg-cubes > li {
+  vertical-align: top;
+  display: inline-block;
+  width: 20%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  /* 1 */
+}
+.hsg-cubes > li:nth-child(1) > .hsg-cube-content,
+.hsg-cubes > li:nth-child(6) > .hsg-cube-content {
+  margin-right: 0;
+}
+.hsg-cubes > li:nth-child(2) > .hsg-cube-content,
+.hsg-cubes > li:nth-child(7) > .hsg-cube-content {
+  margin-right: -100%;
+}
+.hsg-cubes > li:nth-child(3) > .hsg-cube-content,
+.hsg-cubes > li:nth-child(8) > .hsg-cube-content {
+  margin-right: -200%;
+}
+.hsg-cubes > li:nth-child(4) > .hsg-cube-content,
+.hsg-cubes > li:nth-child(9) > .hsg-cube-content {
+  margin-right: -300%;
+}
+.hsg-cubes > li:nth-child(5) > .hsg-cube-content,
+.hsg-cubes > li:nth-child(10) > .hsg-cube-content {
+  margin-right: -400%;
+}
+@media (max-width: 765px) {
+  .hsg-cubes > li {
+    width: 100%;
+  }
+  .hsg-cubes > li:nth-child(1) > .hsg-cube-content,
+  .hsg-cubes > li:nth-child(2) > .hsg-cube-content,
+  .hsg-cubes > li:nth-child(3) > .hsg-cube-content,
+  .hsg-cubes > li:nth-child(4) > .hsg-cube-content,
+  .hsg-cubes > li:nth-child(5) > .hsg-cube-content,
+  .hsg-cubes > li:nth-child(6) > .hsg-cube-content,
+  .hsg-cubes > li:nth-child(7) > .hsg-cube-content,
+  .hsg-cubes > li:nth-child(8) > .hsg-cube-content,
+  .hsg-cubes > li:nth-child(9) > .hsg-cube-content,
+  .hsg-cubes > li:nth-child(10) > .hsg-cube-content {
+    margin-right: 0;
+  }
+}
+/* Modifier: cubes as links
+ ========================================================================== */
+.hsg-cubes-links .hsg-cube-item:after {
+  background-image: url("../images/sprite-img.png");
+  background-position: -106px -243px;
+}
+.hsg-cubes-links .hsg-cube-item:hover:after {
+  background-position: -79px -243px;
+}
+@media (max-width: 765px) {
+  .hsg-cubes-links .hsg-cube-item:after {
+    background-image: url("../images/sprite-img2.png");
+    background-position: 5px -1937px;
+    border-right: 0 none;
+  }
+  .hsg-cubes-links .hsg-cube-item:hover:after {
+    background-position: 5px -1937px;
+  }
+}
+/* Sub-Component: 'hsg-cube-item'
+ ========================================================================== */
+/*
+ * 1. because shivuk department wanted the strange 18px bottom padding instead of 20px. im doing the math calculation there.
+ * 2. i cant explain why but on IE8 the cubes height is bigger by 39px. this is a small hack to match the heights for ie8
+ */
+/* needed to overwrite global link declaration */
+a.hsg-cube-item {
+  text-decoration: none;
+}
+.hsg-cube-item {
+  min-height: 145px;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  text-align: center;
+  padding: 12px 10px 12px 10px;
+  display: block;
+  border-left: 1px solid #cecfd3;
+  border-bottom: 1px solid #cecfd3;
+  position: relative;
+}
+.hsg-cube-item:after {
+  content: "";
+  background-image: url("../images/sprite-img2.png");
+  background-position: -28px -1273px;
+  height: 26px;
+  width: 26px;
+  margin: 0 auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+  /* 1 */
+  bottom: 18px;
+}
+.hsg-cube-item:hover:after {
+  background-position: -83px -1273px;
+}
+.hsg-cube-item i {
+  padding-bottom: 8px;
+  margin: 0 auto;
+  display: block;
+}
+.hsg-cube-item h2 {
+  margin: 0;
+  color: #003f80;
+  font-size: 18px;
+  line-height: 18px;
+  padding-top: 6px;
+  padding-bottom: 4px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.hsg-cube-item p {
+  margin: 0;
+  padding-top: 0;
+  color: #585858;
+  font-size: 15px;
+  line-height: 15px;
+  padding-bottom: 8px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+@media (max-width: 765px) {
+  .hsg-cube-item {
+    min-height: inherit;
+    text-align: right;
+    position: relative;
+    padding-left: 56px;
+    padding-bottom: 10px;
+  }
+  .hsg-cube-item:after {
+    margin: 0;
+    position: absolute;
+    right: initial;
+    right: inherit;
+    left: 16px;
+    top: 50%;
+    margin-top: -10px;
+    background-position: -67px -1329px;
+    height: 20px;
+    width: 31px;
+    border-right: 1px solid #dfdfdf;
+  }
+  .hsg-cube-item:hover:after {
+    background-position: -67px -1329px;
+  }
+  .hsg-cube-item i {
+    margin: 0 0 0 12px;
+    display: inline-block;
+    padding-bottom: 0;
+    float: right;
+  }
+  .hsg-cube-item h2 {
+    display: inline;
+    color: #0164a5;
+    white-space: normal;
+    margin-left: 8px;
+    line-height: 26px;
+    padding: 0;
+  }
+  .hsg-cube-item p {
+    display: inline;
+    color: initial;
+    white-space: normal;
+    margin-right: 0;
+    line-height: 26px;
+    padding: 0;
+  }
+}
+/* 2 */
+.ie8 .hsg-cube-item {
+  min-height: 106px;
+}
+/* Sub-Component: 'hsg-cube-content'
+ ========================================================================== */
+.hsg-cube-content {
+  display: none;
+  background-color: #e0e8fa;
+  padding: 10px 10px;
+  width: 500%;
+}
+@media (max-width: 765px) {
+  .hsg-cube-content {
+    width: 100%;
+  }
+}
+/* Sub-Component: 'hsg-cube-content'
+ ========================================================================== */
+.hsg-cube-header {
+  border-bottom: 1px solid #c4d3ce;
+  overflow: hidden;
+  color: #003f80;
+  padding-bottom: 10px;
+}
+.hsg-cube-header .hsg-cube-head {
+  margin: 0;
+  font-size: 18px;
+  color: #003f80;
+  display: inline-block;
+  padding-left: 16px;
+}
+.hsg-cube-header .hsg-cube-sub-head {
+  margin: 0;
+  font-size: 16px;
+  color: #003f80;
+  display: inline-block;
+}
+.hsg-cube-header .hsg-cube-close {
+  float: left;
+  padding: 0 20px 0 36px;
+  position: relative;
+  line-height: 27px;
+}
+@media (max-width: 765px) {
+  .hsg-cube-header .hsg-cube-close {
+    display: none;
+  }
+}
+.hsg-cube-header .hsg-cube-close:after {
+  content: "";
+  background-image: url("../images/sprite-img2.png");
+  background-position: -170px -1116px;
+  height: 27px;
+  width: 29px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.hsg-cube-header .hsg-cube-close:hover:after {
+  background-position: -128px -802px;
+}
+.hsg-cube-header + .hsg-cube-body {
+  padding-top: 10px;
+}
+/* State: cube active
+ ========================================================================== */
+.hsg-cube-active .hsg-cube-item {
+  background-color: #e0e8fa;
+  border-bottom-color: #e0e8fa;
+}
+.hsg-cube-active .hsg-cube-item:after {
+  background-position: 0 -1273px;
+}
+.hsg-cube-active .hsg-cube-item:hover:after {
+  background-position: -55px -1273px;
+}
+@media (max-width: 765px) {
+  .hsg-cube-active .hsg-cube-item {
+    border-bottom-color: #cecfd3;
+  }
+  .hsg-cube-active .hsg-cube-item:after {
+    background-position: -7px -1332px;
+  }
+  .hsg-cube-active .hsg-cube-item:hover:after {
+    background-position: -7px -1332px;
+  }
+}
+/* ========================================================================
+   Component: Text
+ ========================================================================== */
+/* Size modifiers
+ ========================================================================== */
+.hsg-text-small {
+  font-size: 11px;
+  line-height: 16px;
+}
+.hsg-text-large {
+  font-size: 18px;
+  line-height: 24px;
+}
+/* Weight modifiers
+ ========================================================================== */
+.hsg-text-normal {
+  font-weight: normal !important;
+}
+.hsg-text-bold {
+  font-weight: bold !important;
+}
+/* Color modifiers
+ ========================================================================== */
+.hsg-text-primary-1 {
+  color: #003f80 !important;
+}
+.hsg-text-primary-2 {
+  color: #002447 !important;
+}
+.hsg-text-primary-3 {
+  color: #0164a5 !important;
+}
+.hsg-text-primary-4 {
+  color: #c89015 !important;
+}
+.hsg-text-primary-5 {
+  color: #e0e8fa !important;
+}
+.hsg-text-muted {
+  color: #999999 !important;
+}
+.hsg-text-success {
+  color: #388540 !important;
+}
+.hsg-text-danger {
+  color: #c80b0b !important;
+}
+.hsg-text-link {
+  color: #006cb2 !important;
+}
+.hsg-text-white {
+  color: #ffffff !important;
+}
+.hsg-text-background-primary-1 {
+  background-color: #003f80 !important;
+}
+.hsg-text-background-primary-2 {
+  background-color: #002447 !important;
+}
+.hsg-text-background-primary-3 {
+  background-color: #0164a5 !important;
+}
+.hsg-text-background-primary-4 {
+  background-color: #c89015 !important;
+}
+.hsg-text-background-primary-5 {
+  background-color: #e0e8fa !important;
+}
+.hsg-text-background-white {
+  background-color: #ffffff !important;
+}
+.hsg-text-background-link {
+  background-color: #006cb2 !important;
+}
+.hsg-text-background-success {
+  background-color: #388540 !important;
+}
+.hsg-text-background-danger {
+  background-color: #c80b0b !important;
+}
+.hsg-text-background-gray {
+  background-color: #e8eaed !important;
+}
+.hsg-text-background-muted {
+  background-color: #999999 !important;
+}
+/* Alignment modifiers
+ ========================================================================== */
+.hsg-text-left {
+  text-align: left !important;
+}
+.hsg-text-right {
+  text-align: right !important;
+}
+.hsg-text-center {
+  text-align: center !important;
+}
+.hsg-text-justify {
+  text-align: justify !important;
+}
+.hsg-text-top {
+  vertical-align: top !important;
+}
+.hsg-text-middle {
+  vertical-align: middle !important;
+}
+.hsg-text-bottom {
+  vertical-align: bottom !important;
+}
+/* Only tablets portrait */
+@media (min-width: 765px) and (max-width: 1012px) {
+  .hsg-text-center-medium {
+    text-align: center !important;
+  }
+}
+/* Phone landscape and smaller */
+@media (max-width: 764px) {
+  .hsg-text-center-small {
+    text-align: center !important;
+  }
+}
+/* Desktop and bigger */
+@media (min-width: 1013px) {
+  .hsg-text-center-large {
+    text-align: center !important;
+  }
+}
+/* Wrap modifiers
+ ========================================================================== */
+/*
+ * Prevent text from wrapping onto multiple lines
+ */
+.hsg-text-nowrap {
+  white-space: nowrap;
+}
+/*
+ * Prevent text from wrapping onto multiple lines, and truncate with an ellipsis
+ */
+.hsg-text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+/*
+ * Break strings if their length exceeds the width of their container
+ */
+.hsg-text-break {
+  word-wrap: break-word;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
+}
+/* ========================================================================
+   Component: Utility
+ ========================================================================== */
+/* Special classes in body
+ ========================================================================== */
+/* default - application is self with top and footer */
+body > .hsg-container {
+  margin-left: auto;
+  margin-right: auto;
+  float: none;
+  clear: both;
+  margin-top: 15px !important;
+  margin-bottom: 15px !important;
+}
+/* display application in iframe */
+.hsg-app-iframe > .hsg-container {
+  max-width: 100%;
+  padding: 0;
+  margin-bottom: 15px !important;
+  margin-top: 0 !important;
+}
+.hsg-app-iframe > .hsg-top,
+.hsg-app-iframe > .hsg-footer {
+  display: none;
+}
+/* remove header from application */
+.hsg-app-no-header .hsg-header {
+  display: none;
+}
+/* Container
+ ========================================================================== */
+.hsg-container {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  position: relative;
+  max-width: 1010px;
+  padding: 0 15px;
+}
+@media (max-width: 1013px) {
+  .hsg-container {
+    max-width: 763px;
+    padding: 0 15px;
+  }
+}
+@media (max-width: 518px) {
+  .hsg-container {
+    padding: 0 8px;
+  }
+}
+.hsg-container:before,
+.hsg-container:after {
+  /* 1 */
+  content: " ";
+  /* 2 */
+  display: table;
+}
+.hsg-container:after {
+  clear: both;
+}
+/*
+ * Center container
+ */
+.hsg-container-center {
+  margin-left: auto;
+  margin-right: auto;
+  float: none;
+  clear: both;
+}
+/*
+ * Full screen container (for example: needed inside iframe)
+ */
+.hsg-container-full {
+  max-width: 100%;
+  padding: 0;
+}
+/*
+ * App container (needed for independent app)
+ */
+.hsg-container-app {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  position: relative;
+  max-width: 1010px;
+  padding: 0 15px;
+  margin-left: auto;
+  margin-right: auto;
+  float: none;
+  clear: both;
+  margin-top: 15px !important;
+  margin-bottom: 15px !important;
+}
+@media (max-width: 1013px) {
+  .hsg-container-app {
+    max-width: 763px;
+    padding: 0 15px;
+  }
+}
+@media (max-width: 518px) {
+  .hsg-container-app {
+    padding: 0 8px;
+  }
+}
+.hsg-container-app:before,
+.hsg-container-app:after {
+  /* 1 */
+  content: " ";
+  /* 2 */
+  display: table;
+}
+.hsg-container-app:after {
+  clear: both;
+}
+/* Clearing
+ ========================================================================== */
+/*
+ * Micro clearfix
+ */
+.hsg-clearfix:before,
+.hsg-clearfix:after {
+  /* 1 */
+  content: " ";
+  /* 2 */
+  display: table;
+}
+.hsg-clearfix:after {
+  clear: both;
+}
+/*
+ *  Create a new block formatting context
+ */
+.hsg-nbfc {
+  overflow: hidden;
+}
+.uk-nbfc-alt {
+  display: table-cell;
+  width: 10000px;
+}
+/* Alignment of block elements
+ ========================================================================== */
+/*
+ * Float blocks
+ * 1. Prevent content overflow on small devices
+ */
+.hsg-float-left {
+  float: left !important;
+  /* 1 */
+}
+@media (max-width: 518px) {
+  .hsg-float-left {
+    float: none !important;
+  }
+}
+.hsg-float-right {
+  float: right !important;
+  /* 1 */
+}
+@media (max-width: 518px) {
+  .hsg-float-right {
+    float: none !important;
+  }
+}
+[class*='hsg-float-'] {
+  max-width: 100%;
+}
+/* Alignment of images and objects
+ ========================================================================== */
+/*
+ * Alignment
+ */
+[class*='hsg-align-'] {
+  display: block;
+  margin-bottom: 8px;
+}
+.hsg-align-left {
+  margin-right: 8px;
+  float: left;
+}
+.hsg-align-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+.hsg-align-right {
+  margin-left: 8px;
+  float: right;
+}
+/* Only tablets and desktop */
+@media (min-width: 765px) {
+  .hsg-align-medium-left {
+    margin-right: 8px;
+    margin-bottom: 8px;
+    float: left;
+  }
+  .hsg-align-medium-right {
+    margin-left: 8px;
+    margin-bottom: 8px;
+    float: right;
+  }
+}
+/* Vertical alignment
+ ========================================================================== */
+/*
+ * Remove whitespace between child elements when using 'inline-block'
+ */
+.hsg-vertical-align {
+  letter-spacing: -0.31em;
+}
+/*
+ *  The 'hsg-vertical-align' container needs a specific height
+ */
+.hsg-vertical-align:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+/*
+ * Sub-object which can have any height
+ * 1. Reset whitespace hack
+ */
+.hsg-vertical-align-middle,
+.hsg-vertical-align-bottom {
+  display: inline-block;
+  letter-spacing: normal;
+  /* 1 */
+  max-width: 100%;
+}
+.hsg-vertical-align-middle {
+  vertical-align: middle;
+}
+.hsg-vertical-align-bottom {
+  vertical-align: bottom;
+}
+/* Responsive objects
+ * Note: Images are already responsive by default, see Base component
+ ========================================================================== */
+/*
+ * 1. Corrects max-width/max-height behavior if padding and border are used
+ */
+.hsg-responsive-width,
+.hsg-responsive-height {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/*
+ * Responsiveness: Sets a maxium width relative to the parent and auto scales the height
+ */
+.hsg-responsive-width {
+  max-width: 100%;
+  height: auto;
+}
+/*
+ * Responsiveness: Sets a maxium height relative to the parent and auto scales the width
+ * Only works if the parent element has a fixed height.
+ */
+.hsg-responsive-height {
+  max-height: 100%;
+  width: auto;
+}
+/* Margin
+ ========================================================================== */
+/*
+ * Create a block with the same margin of a paragraph
+ * Add margin if adjacent element
+ */
+.hsg-margin {
+  margin-bottom: 15px;
+}
+* + .hsg-margin {
+  margin-top: 15px;
+}
+.hsg-margin-top {
+  margin-top: 15px !important;
+}
+.hsg-margin-bottom {
+  margin-bottom: 15px !important;
+}
+.hsg-margin-left {
+  margin-left: 15px !important;
+}
+.hsg-margin-right {
+  margin-right: 15px !important;
+}
+/*
+ * Larger margins
+ */
+.hsg-margin-large {
+  margin-bottom: 50px;
+}
+* + .hsg-margin-large {
+  margin-top: 50px;
+}
+.hsg-margin-large-top {
+  margin-top: 50px !important;
+}
+.hsg-margin-large-bottom {
+  margin-bottom: 50px !important;
+}
+.hsg-margin-large-left {
+  margin-left: 50px !important;
+}
+.hsg-margin-large-right {
+  margin-right: 50px !important;
+}
+/*
+ * Smaller margins
+ */
+.hsg-margin-small {
+  margin-bottom: 5px;
+}
+* + .hsg-margin-small {
+  margin-top: 5px;
+}
+.hsg-margin-small-top {
+  margin-top: 5px !important;
+}
+.hsg-margin-small-bottom {
+  margin-bottom: 5px !important;
+}
+.hsg-margin-small-left {
+  margin-left: 5px !important;
+}
+.hsg-margin-small-right {
+  margin-right: 5px !important;
+}
+/*
+ * Remove margins
+ */
+.hsg-margin-remove {
+  margin: 0 !important;
+}
+.hsg-margin-top-remove {
+  margin-top: 0 !important;
+}
+.hsg-margin-bottom-remove {
+  margin-bottom: 0 !important;
+}
+/* Link
+ ========================================================================== */
+.hsg-link-muted,
+.hsg-link-muted a {
+  color: #444444;
+}
+.hsg-link-muted:hover,
+.hsg-link-muted a:hover {
+  color: #444444;
+}
+/* Scrollable
+ ========================================================================== */
+/*
+ * Enable scrolling for preformatted text
+ */
+.hsg-scrollable-text {
+  max-height: 300px;
+  overflow-y: scroll;
+}
+/*
+ * Box with scrolling enabled
+ */
+.hsg-scrollable-box {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  max-height: 170px;
+  padding: 10px;
+  border: 1px solid #dddddd;
+  overflow: auto;
+}
+/*
+ * Remove margin from the last-child
+ */
+.hsg-scrollable-box > :last-child {
+  margin-bottom: 0;
+}
+/* Display
+ ========================================================================== */
+/*
+ * Display
+ */
+.hsg-display-block {
+  display: block !important;
+}
+.hsg-display-inline {
+  display: inline !important;
+}
+.hsg-display-inline-block {
+  display: inline-block !important;
+}
+/*
+ * Visibility
+ * Avoids setting display to 'block'
+ * Pay attention - you cant put more than one rule per element
+ */
+@media (min-width: 1013px) {
+  .hsg-visible-mini,
+  .hsg-visible-small,
+  .hsg-visible-medium,
+  .hsg-hidden-large {
+    display: none !important;
+  }
+}
+@media (min-width: 765px) and (max-width: 1012px) {
+  .hsg-visible-mini,
+  .hsg-visible-small,
+  .hsg-visible-large,
+  .hsg-hidden-medium {
+    display: none !important;
+  }
+}
+@media (min-width: 518px) and (max-width: 764px) {
+  .hsg-visible-mini,
+  .hsg-visible-medium,
+  .hsg-visible-large,
+  .hsg-hidden-small {
+    display: none !important;
+  }
+}
+@media (max-width: 518px) {
+  .hsg-visible-small,
+  .hsg-visible-medium,
+  .hsg-visible-large,
+  .hsg-hidden-mini {
+    display: none !important;
+  }
+}
+@media (min-width: 765px) {
+  .hsg-visible-until-medium {
+    display: none !important;
+  }
+}
+@media (max-width: 764px) {
+  .hsg-hidden-until-medium {
+    display: none !important;
+  }
+}
+/* Remove from the flow and screen readers on any device */
+.hsg-hidden {
+  display: none !important;
+  visibility: hidden !important;
+}
+/* It's hidden, but still affects layout */
+.hsg-invisible {
+  visibility: hidden !important;
+}
+/* Show on hover */
+.hsg-visible-hover:hover .hsg-hidden,
+.hsg-visible-hover:hover .hsg-invisible {
+  display: block !important;
+  visibility: visible !important;
+}
+.hsg-visible-hover-inline:hover .hsg-hidden,
+.hsg-visible-hover-inline:hover .hsg-invisible {
+  display: inline-block !important;
+  visibility: visible !important;
+}
+/* Background
+ ========================================================================== */
+.hsg-transparent {
+  background: none transparent !important;
+}
+/* Border modifiers
+ ========================================================================== */
+.hsg-border-left {
+  border-left: 1px solid #d6d6d6 !important;
+}
+.hsg-border-right {
+  border-right: 1px solid #d6d6d6 !important;
+}
+.hsg-border-bottom {
+  border-bottom: 1px solid #d6d6d6 !important;
+}
+.hsg-border-top {
+  border-top: 1px solid #d6d6d6 !important;
+}
+.hsg-border-top {
+  border: 1px solid #d6d6d6 !important;
+}
+/* Iframe in application
+ ========================================================================== */
+.hsg-iframe {
+  width: 100%;
+  border-width: 0;
+  overflow: hidden;
+  background: transparent;
+  display: block;
+}
+/* Full screen background image
+TODO: add image for medium
+TODO: add html conditional for IE8 to show image
+ ========================================================================== */
+.hsg-app-bg {
+  background-size: cover;
+  height: 100%;
+  z-index: -99999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+@media (min-width: 518px) {
+  .hsg-app-bg {
+    background-image: url("../images/bg.jpg");
+  }
+}
+/* ========================================================================
+   Component: Print
+ ========================================================================== */
+@media print {
+  * {
+    background: transparent !important;
+    color: black !important;
+    /* Black prints faster: h5bp.com/s */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+  /*
+       * Don't show links for images, or javascript/internal links
+       */
+  a[href^="javascript:"]:after,
+  a[href^="#"]:after {
+    content: "";
+  }
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+  thead {
+    display: table-header-group;
+  }
+  /* h5bp.com/t */
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+  img {
+    max-width: 100% !important;
+  }
+  @page {
+    margin: 0.5cm;
+  }
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+  /* 1 */
+  .hsg-app-bg {
+    background-image: none;
+    display: none;
+  }
+}
+@media print {
+  .hsg-print-hide {
+    display: none;
+    visibility: hidden;
+  }
+}
+@media print {
+  .hsg-print-show {
+    display: block;
+    visibility: visible;
+  }
+}
+@media print {
+  .hsg-print-show-inline {
+    display: inline-block;
+    visibility: visible;
+  }
+}
+@media print {
+  .hsg-print-link-as-text,
+  .hsg-print-link-as-text:visited {
+    text-decoration: none;
+  }
+  .hsg-print-link-as-text[href]:after,
+  .hsg-print-link-as-text[title]:after {
+    content: "";
+  }
+}
+.ie8 .hsg-footer-container {
+  max-width: 980px;
+}
+/*
+TODO:
+    11. add 'offset' to grid columns?!
+    15. on panel mixins, change the "remove margin from last child" to work on ie8
+    16. change panel box colors modifiers name. because primary is now white (regualr)
+    17. need to match height on panel using data-equal-height attribute
+    20. need to add bottom margin to last element  row on page ?!
+    25. update gethsg strip documentaion
+    25. update gethsg grid documentaion
+    25. update gethsg utility documentaion
+    25. update gethsg header documentaion
+    29. add bottom gap when grid change to "one in row" when breaking using breakpoint (see on form.html)
+    33. check shinuy-maslul-gemel-form.html on ie8-11 on 990-960 resolution to test container with iframe in it
+    36. change icons to svg
+    37. move .hsg-panel + .hsg-panel outside hsg-grid
+    38. move .hsg-strip + .hsg-strip outside hsg-grid
+    39. add information about text classes (align functions)
+    40. make sure there are spaces between .hsg-panel, .hsg-grid & .hsg-strip (after 37-38)
+    42. add .hsg-form-text info to pages
+    42. check how to maintain form vertical gutter on responsive columns (you can see the problem on client-details.html)
+    43. add info about .hsg-table-head-secondary
+    44. add info about .hsg-cubes
+    45. add support to strip script to open/close without .hsg-strip-body (if not exists and there is not .hsg-strip-head)
+    46. work on pagination so when item has disabled class then the icon turns gray without changing the icon
+    47. find a way to make scrollbars always visible on responsive table on iphone
+*/
